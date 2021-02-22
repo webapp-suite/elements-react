@@ -1,9 +1,14 @@
 {
     "name": "@webapp-suite/elements-react",
     "description": "Webapp suite elements library using react",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "module": "es/index.js",
-    "files": ["es", "src/fonts.css", "src/fonts.vars.css", "index.d.ts"],
+    "files": [
+        "es",
+        "src/fonts.css",
+        "src/fonts.vars.css",
+        "index.d.ts"
+    ],
     "scripts": {
         "prestart": "npm i",
         "start": "",
