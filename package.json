@@ -3,16 +3,7 @@
     "description": "Webapp suite elements library using react",
     "version": "0.1.0",
     "module": "es/index.js",
-    "dependencies": {
-        "@tradeshift/elements.button": "^0.19.1",
-        "@tradeshift/elements.header": "^0.19.1",
-        "@tradeshift/elements.icon": "^0.19.1",
-        "@tradeshift/elements.modal": "^0.19.1",
-        "@tradeshift/elements.root": "^0.19.1",
-        "@tradeshift/elements.tooltip": "^0.19.1",
-        "classnames": "^2.2.6",
-        "webcomponents-in-react": "^1.0.1"
-    },
+    "files": ["es", "src/fonts.css", "src/fonts.vars.css", "index.d.ts"],
     "scripts": {
         "prestart": "npm i",
         "start": "",
@@ -36,6 +27,16 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "dependencies": {
+        "@tradeshift/elements.button": "^0.19.1",
+        "@tradeshift/elements.header": "^0.19.1",
+        "@tradeshift/elements.icon": "^0.19.1",
+        "@tradeshift/elements.modal": "^0.19.1",
+        "@tradeshift/elements.root": "^0.19.1",
+        "@tradeshift/elements.tooltip": "^0.19.1",
+        "classnames": "^2.2.6",
+        "webcomponents-in-react": "^1.0.1"
     },
     "devDependencies": {
         "@testing-library/react": "^11.2.5",
