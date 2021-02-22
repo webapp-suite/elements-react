@@ -6,7 +6,7 @@
     "files": [
         "es",
         "src/fonts.css",
-        "src/fonts.vars.css",
+        "src/vars.css",
         "index.d.ts"
     ],
     "scripts": {
