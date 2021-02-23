@@ -34,12 +34,13 @@
         ]
     },
     "dependencies": {
-        "@tradeshift/elements.button": "^0.19.1",
-        "@tradeshift/elements.header": "^0.19.1",
-        "@tradeshift/elements.icon": "^0.19.1",
-        "@tradeshift/elements.modal": "^0.19.1",
-        "@tradeshift/elements.root": "^0.19.1",
-        "@tradeshift/elements.tooltip": "^0.19.1",
+        "@tradeshift/elements": "^0.19.2",
+        "@tradeshift/elements.button": "^0.19.2",
+        "@tradeshift/elements.header": "^0.19.2",
+        "@tradeshift/elements.icon": "^0.19.2",
+        "@tradeshift/elements.modal": "^0.19.2",
+        "@tradeshift/elements.root": "^0.19.2",
+        "@tradeshift/elements.tooltip": "^0.19.2",
         "classnames": "^2.2.6",
         "webcomponents-in-react": "^1.0.1"
     },
