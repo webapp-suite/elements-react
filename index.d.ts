@@ -9,9 +9,10 @@ declare global {
         }
     }
 }
-export { default as Button } from './Button';
-export { default as Icon } from './Icon';
-export { default as Tooltip } from './Tooltip';
-export { default as Header } from './Header';
-export { default as Modal } from './Modal';
-export { default as Root } from './Root';
+export { default as Root } from './es/Root';
+export { default as Button } from './es/Button';
+export { default as Icon } from './es/Icon';
+export { default as Tooltip } from './es/Tooltip';
+export { default as Header } from './es/Header';
+export { default as Modal } from './es/Modal';
+export { default as Aside } from './es/Aside';
