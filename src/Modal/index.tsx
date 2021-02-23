@@ -8,6 +8,8 @@ const Modal = adapt("ts-modal", {
     onClose: "close",
     onOpen: "open",
     noPadding: "no-padding",
+    hideHeader: "hide-header",
+    className: 'class'
 });
 
 export default Modal;
