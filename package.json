@@ -35,6 +35,7 @@
     },
     "dependencies": {
         "@tradeshift/elements": "^0.19.2",
+        "@tradeshift/elements.aside": "^0.19.2",
         "@tradeshift/elements.button": "^0.19.2",
         "@tradeshift/elements.header": "^0.19.2",
         "@tradeshift/elements.icon": "^0.19.2",
