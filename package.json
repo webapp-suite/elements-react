@@ -17,7 +17,7 @@
         "version:major": "npm version major",
         "version:minor": "npm version minor",
         "version:patch": "npm version patch",
-        "publish": "npm run build && npm publish --access public"
+        "publish:public": "npm run build && npm publish --access public"
     },
     "eslintConfig": {
         "extends": [
