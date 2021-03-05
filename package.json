@@ -3,6 +3,7 @@
     "description": "Webapp suite elements library using react",
     "version": "0.2.3",
     "module": "es/index.js",
+    "types": "es/index.d.ts",
     "files": [
         "es",
         "src/fonts.css",
