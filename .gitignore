@@ -106,3 +106,5 @@ dist
 # Project
 es/
 .npmrc
+.idea
+.vscode
