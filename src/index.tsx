@@ -5,26 +5,15 @@ declare global {
                 React.HTMLAttributes<HTMLElement>,
                 HTMLElement
             >;
-            "ts-modal": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement>,
-                HTMLElement
-            >;
-            "ts-button": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement>,
-                HTMLElement
-            >;
-            "ts-aside": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement>,
-                HTMLElement
-            >;
         }
     }
 }
 
-export { default as Root } from './Root';
-export { default as Button } from './Button';
-export { default as Icon } from './Icon';
-export { default as Tooltip } from './Tooltip';
-export { default as Header } from './Header';
-export { default as Modal } from './Modal';
-export { default as Aside } from './Aside';
+export { default as Root } from './components/Root';
+export { default as Button } from './components/Button';
+export { default as Icon } from './components/Icon';
+export { default as Tooltip } from './components/Tooltip';
+export { default as Header } from './components/Header';
+export { default as Modal } from './components/Modal';
+export { default as Aside } from './components/Aside';
+export { default as Dialog } from './components/Dialog';
