@@ -1,4 +1,4 @@
-import '@tradeshift/elements.modal';
+import '@webapp-suite/elements.modal';
 import { adapt } from 'webcomponents-in-react';
 
 const Modal = adapt("ts-modal", {

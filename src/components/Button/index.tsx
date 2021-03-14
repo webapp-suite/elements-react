@@ -1,4 +1,4 @@
-import '@tradeshift/elements.button';
+import '@webapp-suite/elements.button';
 import { adapt } from 'webcomponents-in-react';
 
 const Button = adapt("ts-button", {

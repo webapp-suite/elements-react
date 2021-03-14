@@ -1,4 +1,4 @@
-import '@tradeshift/elements.aside';
+import '@webapp-suite/elements.aside';
 import { adapt } from 'webcomponents-in-react';
 
 const Aside = adapt("ts-aside", {

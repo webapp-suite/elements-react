@@ -1,4 +1,4 @@
-import '@tradeshift/elements.tooltip';
+import '@webapp-suite/elements.tooltip';
 import { adapt } from 'webcomponents-in-react';
 
 const Tooltip = adapt("ts-tooltip", {

@@ -1,5 +1,5 @@
 import { withWebComponent, WithWebComponentPropTypes } from "../../common/withWebComponent";
-import "@tradeshift/elements.dialog";
+import "@webapp-suite/elements.dialog";
 import { FC, ReactNode, useState } from "react";
 
 export interface DialogPropTypes extends WithWebComponentPropTypes {
