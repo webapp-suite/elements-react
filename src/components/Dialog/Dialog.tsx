@@ -1,15 +1,17 @@
-import { withWebComponent, WithWebComponentPropTypes } from "../../common/withWebComponent";
 import "@webapp-suite/elements.dialog";
-import { FC, ReactNode, useState } from "react";
 
-export interface DialogPropTypes extends WithWebComponentPropTypes {
+import React from "react";
+
+import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
+
+export interface DialogPropTypes extends WebComponentPropTypes {
     dataVisible?: boolean;
     text: string;
     icon?: string;
     type?: "confirm" | "warning" | "danger";
     translations?: {
-        acceptbutton: string;
-        cancelbutton: string;
+        acceptButton?: string;
+        cancelButton?: string;
     };
     focused?: string;
     primary?: string;
@@ -17,7 +19,7 @@ export interface DialogPropTypes extends WithWebComponentPropTypes {
     onCancel?: (event: CustomEvent) => void;
 }
 
-const Dialog: FC<DialogPropTypes> = withWebComponent<DialogPropTypes>(
+const Dialog: React.FC<DialogPropTypes> = convertToWebComponent<DialogPropTypes>(
     "ts-dialog",
     ["text", "icon", "type", "translations", "focused", "primary"],
     ["dataVisible"],
@@ -31,7 +33,7 @@ Dialog.defaultProps = {
     dataVisible: false,
     text: "",
     type: "confirm",
-    translations: { acceptbutton: "OK", cancelbutton: "Cancel" },
+    translations: { acceptButton: "OK", cancelButton: "Cancel" },
     focused: "cancel",
 };
 

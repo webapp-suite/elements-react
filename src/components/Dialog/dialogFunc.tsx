@@ -3,8 +3,8 @@ export interface DialogFuncProps {
     icon?: string;
     type?: "confirm" | "warning" | "danger";
     translations?: {
-        acceptbutton: string;
-        cancelbutton: string;
+        acceptButton?: string;
+        cancelButton?: string;
     };
     focused?: string;
     primary?: string;

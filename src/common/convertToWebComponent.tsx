@@ -1,7 +1,3 @@
-// @ts-nocheck
-
-import { getEffectiveScopingSuffixForTag } from "./CustomElementsScope";
-import { useConsolidatedRef } from "./useConsolidatedRef";
 import React, {
     Children,
     cloneElement,
@@ -14,31 +10,38 @@ import React, {
     useEffect,
     useRef,
 } from "react";
+
 import { CommonProps } from "../interfaces/CommonProps";
 import { DomRef } from "../interfaces/DomRef";
+import { getEffectiveScopingSuffixForTag } from "./CustomElementsScope";
+import { useConsolidatedRef } from "./useConsolidatedRef";
+import {
+    isObject,
+    capitalizeFirstLetter,
+    camelToKebabCase,
+    camelToSnakeCase,
+    kebabToCamelCase,
+    convertObjectKey,
+} from "./utils";
 
-const capitalizeFirstLetter = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
-const camelToKebabCase = (s: string) => s.replace(/([A-Z])/g, (a, b: string) => `-${b.toLowerCase()}`);
-const kebabToCamelCase = (str: string) => str.replace(/([-_]\w)/g, (g) => g[1].toUpperCase());
-
-const createEventPropName = (eventName) => `on${capitalizeFirstLetter(kebabToCamelCase(eventName))}`;
+const createEventPropName = (eventName: string) => `on${capitalizeFirstLetter(kebabToCamelCase(eventName))}`;
 
 type EventHandler = (event: CustomEvent<unknown>) => void;
 
-export interface WithWebComponentPropTypes extends CommonProps {
+export interface WebComponentPropTypes extends CommonProps {
     ref?: Ref<any>;
     children?: any | void;
 }
 
-export const withWebComponent = <T extends Record<string, any>>(
+export const convertToWebComponent = <T extends Record<string, any>>(
     tagName: string,
     regularProperties: string[],
     booleanProperties: string[],
     slotProperties: string[],
     eventProperties: string[]
 ) => {
-    const WithWebComponent = forwardRef((props: T & WithWebComponentPropTypes, wcRef: RefObject<DomRef>) => {
+    // @ts-ignore
+    const WithWebComponent = forwardRef((props: T & WebComponentPropTypes, wcRef: RefObject<DomRef>) => {
         const { className, tooltip, children, ...rest } = props;
 
         const ref = useConsolidatedRef<HTMLElement>(wcRef);
@@ -47,7 +50,13 @@ export const withWebComponent = <T extends Record<string, any>>(
         // regular props (no booleans, no slots and no events)
         const regularProps = regularProperties.reduce((acc, name) => {
             if (rest.hasOwnProperty(name)) {
-                return { ...acc, [camelToKebabCase(name)]: rest[name] };
+                // one (rather ugly) way to pass an object is to convert it into a string, using JSON.stringify
+                return {
+                    ...acc,
+                    [camelToKebabCase(name)]: isObject(rest[name])
+                        ? JSON.stringify(convertObjectKey(rest[name], camelToSnakeCase))
+                        : rest[name],
+                };
             }
             return acc;
         }, {});
@@ -60,14 +69,14 @@ export const withWebComponent = <T extends Record<string, any>>(
             return acc;
         }, {});
 
-        const slots = slotProperties.reduce((acc, name) => {
+        const slots = slotProperties.reduce((acc: any[], name) => {
             const slotValue = rest[name] as ReactElement;
 
             if (!slotValue) return acc;
 
-            const slottedChildren = [];
+            const slottedChildren: any[] = [];
             let index = 0;
-            const removeFragments = (element) => {
+            const removeFragments = (element: any) => {
                 if (!element) return;
                 if (element.type === React.Fragment) {
                     Children.toArray(element.props?.children)
@@ -102,6 +111,7 @@ export const withWebComponent = <T extends Record<string, any>>(
                     const eventHandler = rest[createEventPropName(eventName)] as EventHandler;
                     if (typeof eventHandler === "function") {
                         eventRegistry.current[eventName] = eventHandler;
+                        // @ts-ignore
                         ref.current.addEventListener(eventName, eventRegistry.current[eventName]);
                     }
                 });
@@ -109,6 +119,7 @@ export const withWebComponent = <T extends Record<string, any>>(
                 return () => {
                     // eslint-disable-next-line guard-for-in
                     for (const eventName in eventRegistry.current) {
+                        // @ts-ignore
                         ref.current?.removeEventListener(eventName, eventRegistry.current[eventName]);
                     }
                 };
@@ -126,7 +137,7 @@ export const withWebComponent = <T extends Record<string, any>>(
 
         const tagNameSuffix: string = getEffectiveScopingSuffixForTag(tagName);
         const Component = ((tagNameSuffix ? `${tagName}-${tagNameSuffix}` : tagName) as unknown) as ComponentType<
-            WithWebComponentPropTypes & { class: string }
+            WebComponentPropTypes & { class: string | undefined }
         >;
 
         return (
@@ -146,5 +157,5 @@ export const withWebComponent = <T extends Record<string, any>>(
 
     WithWebComponent.displayName = `WithWebComponent(${tagName})`;
 
-    return (WithWebComponent as unknown) as ForwardRefRenderFunction<DomRef, T & WithWebComponentPropTypes>;
+    return (WithWebComponent as unknown) as ForwardRefRenderFunction<DomRef, T & WebComponentPropTypes>;
 };
