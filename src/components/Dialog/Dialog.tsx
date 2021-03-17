@@ -8,7 +8,7 @@ export interface DialogPropTypes extends WebComponentPropTypes {
     dataVisible?: boolean;
     text: string;
     icon?: string;
-    type?: "confirm" | "warning" | "danger";
+    type?: "info" | "warning" | "danger";
     translations?: {
         acceptButton?: string;
         cancelButton?: string;
@@ -32,7 +32,7 @@ Dialog.displayName = "Dialog";
 Dialog.defaultProps = {
     dataVisible: false,
     text: "",
-    type: "confirm",
+    type: "info",
     translations: { acceptButton: "OK", cancelButton: "Cancel" },
     focused: "cancel",
 };

@@ -1,7 +1,7 @@
 export interface DialogFuncProps {
     text: string;
     icon?: string;
-    type?: "confirm" | "warning" | "danger";
+    type?: "info" | "warning" | "danger";
     translations?: {
         acceptButton?: string;
         cancelButton?: string;

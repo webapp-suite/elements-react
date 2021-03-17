@@ -26,10 +26,10 @@ const dialogFunc = ({ text, translations, focused, onAccept, onCancel, type }: D
     );
 };
 
-Dialog.confirm = function confirmFn(props: DialogFuncPropsOmitType) {
+Dialog.info = function infoFn(props: DialogFuncPropsOmitType) {
     return dialogFunc({
         ...props,
-        type: "confirm",
+        type: "info",
     });
 };
 
