@@ -5,7 +5,7 @@ import React from "react";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
 
 export interface DialogPropTypes extends WebComponentPropTypes {
-    dataVisible?: boolean;
+    visible?: boolean;
     text: string;
     icon?: string;
     type?: "info" | "warning" | "danger";
@@ -22,15 +22,18 @@ export interface DialogPropTypes extends WebComponentPropTypes {
 const Dialog: React.FC<DialogPropTypes> = convertToWebComponent<DialogPropTypes>(
     "ts-dialog",
     ["text", "icon", "type", "translations", "focused", "primary"],
-    ["dataVisible"],
+    ["visible"],
     [],
-    ["accept", "cancel"]
+    ["accept", "cancel"],
+    {
+        visible: "data-visible"
+    }
 );
 
 Dialog.displayName = "Dialog";
 
 Dialog.defaultProps = {
-    dataVisible: false,
+    visible: false,
     text: "",
     type: "info",
     translations: { acceptButton: "OK", cancelButton: "Cancel" },

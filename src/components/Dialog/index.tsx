@@ -14,7 +14,7 @@ const dialogFunc = ({ text, translations, focused, onAccept, onCancel, type }: D
     rootElem.appendChild(div);
     return ReactDOM.render(
         <OriginDialog
-            dataVisible={true}
+            visible={true}
             text={text}
             type={type}
             translations={translations}

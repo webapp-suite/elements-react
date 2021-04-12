@@ -38,7 +38,8 @@ export const convertToWebComponent = <T extends Record<string, any>>(
     regularProperties: string[],
     booleanProperties: string[],
     slotProperties: string[],
-    eventProperties: string[]
+    eventProperties: string[],
+    mapProperties: { [originProp: string]: string }
 ) => {
     // @ts-ignore
     const WithWebComponent = forwardRef((props: T & WebComponentPropTypes, wcRef: RefObject<DomRef>) => {
@@ -53,7 +54,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
                 // one (rather ugly) way to pass an object is to convert it into a string, using JSON.stringify
                 return {
                     ...acc,
-                    [camelToKebabCase(name)]: isObject(rest[name])
+                    [mapProperties[name] ?? camelToKebabCase(name)]: isObject(rest[name])
                         ? JSON.stringify(convertObjectKey(rest[name], camelToSnakeCase))
                         : rest[name],
                 };
@@ -64,7 +65,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
         // boolean properties - only attach if they are truthy
         const booleanProps = booleanProperties.reduce((acc, name) => {
             if (rest[name] === true || rest[name] === "true") {
-                return { ...acc, [camelToKebabCase(name)]: true };
+                return { ...acc, [mapProperties[name] ?? camelToKebabCase(name)]: true };
             }
             return acc;
         }, {});
@@ -108,7 +109,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
         useEffect(
             () => {
                 eventProperties.forEach((eventName) => {
-                    const eventHandler = rest[createEventPropName(eventName)] as EventHandler;
+                    const eventHandler = rest[createEventPropName(mapProperties[eventName] ?? eventName)] as EventHandler;
                     if (typeof eventHandler === "function") {
                         eventRegistry.current[eventName] = eventHandler;
                         // @ts-ignore
@@ -124,7 +125,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
                     }
                 };
             },
-            eventProperties.map((eventName) => rest[createEventPropName(eventName)])
+            eventProperties.map((eventName) => rest[createEventPropName(mapProperties[eventName] ?? eventName)])
         );
 
         // non web component related props, just pass them
@@ -132,7 +133,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
             .filter(([key]) => !regularProperties.includes(key))
             .filter(([key]) => !slotProperties.includes(key))
             .filter(([key]) => !booleanProperties.includes(key))
-            .filter(([key]) => !eventProperties.map((eventName) => createEventPropName(eventName)).includes(key))
+            .filter(([key]) => !eventProperties.map((eventName) => createEventPropName(mapProperties[eventName] ?? eventName)).includes(key))
             .reduce((acc, [key, val]) => ({ ...acc, [key]: val }), {});
 
         const tagNameSuffix: string = getEffectiveScopingSuffixForTag(tagName);
