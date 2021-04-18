@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { useState } from 'react';
-import { Aside, Button } from '../';
+import { Aside, Button } from '../..';
 
 <Meta title="Example/Aside" component={Aside} />
 
@@ -19,10 +19,6 @@ export const primary = () => {
                 Show Aside
             </Button>
             <Aside
-                // actions={[
-                //     (<Button option='transparent'>No</Button>),
-                //     (<Button>Yes</Button>)
-                // ]}
                 onClose={() => setShowAside(false)}
                 visible={showAside}
                 title='Product Added'>
