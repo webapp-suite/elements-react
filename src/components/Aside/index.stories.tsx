@@ -1,15 +1,13 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { useState } from 'react';
 import { Aside, Button } from '../..';
-
-<Meta title="Example/Aside" component={Aside} />
-
-// export const Template = (args) => <Aside {...args } />
+import { Meta } from "@storybook/react";
 
 export default {
     title: 'Example/Aside',
     component: Aside
-};
+} as Meta;
+
+// export const Template = (args) => <Aside {...args } />
 
 export const primary = () => {
     let [showAside, setShowAside] = useState(false);
