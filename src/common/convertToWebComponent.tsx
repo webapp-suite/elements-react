@@ -109,7 +109,9 @@ export const convertToWebComponent = <T extends Record<string, any>>(
         useEffect(
             () => {
                 eventProperties.forEach((eventName) => {
-                    const eventHandler = rest[createEventPropName(mapProperties[eventName] ?? eventName)] as EventHandler;
+                    const eventHandler = rest[
+                        createEventPropName(mapProperties[eventName] ?? eventName)
+                    ] as EventHandler;
                     if (typeof eventHandler === "function") {
                         eventRegistry.current[eventName] = eventHandler;
                         // @ts-ignore
@@ -133,7 +135,12 @@ export const convertToWebComponent = <T extends Record<string, any>>(
             .filter(([key]) => !regularProperties.includes(key))
             .filter(([key]) => !slotProperties.includes(key))
             .filter(([key]) => !booleanProperties.includes(key))
-            .filter(([key]) => !eventProperties.map((eventName) => createEventPropName(mapProperties[eventName] ?? eventName)).includes(key))
+            .filter(
+                ([key]) =>
+                    !eventProperties
+                        .map((eventName) => createEventPropName(mapProperties[eventName] ?? eventName))
+                        .includes(key)
+            )
             .reduce((acc, [key, val]) => ({ ...acc, [key]: val }), {});
 
         const tagNameSuffix: string = getEffectiveScopingSuffixForTag(tagName);
@@ -148,7 +155,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
                 {...regularProps}
                 {...nonWebComponentRelatedProps}
                 class={className}
-                title={tooltip}
+                // title={tooltip}
             >
                 {slots}
                 {children}
