@@ -5,7 +5,7 @@ import { convertToWebComponent, WebComponentPropTypes } from "../../common/conve
 export interface ModalPropTypes extends WebComponentPropTypes {
     visible: boolean;
     title?: string;
-    dir?: "rtl" | "ltr";
+    dir?: "rtl" | "ltr" | "auto";
     size?: "small" | "medium" | "large";
     noCloseOnEscKey?: boolean;
     hideHeader?: boolean;
