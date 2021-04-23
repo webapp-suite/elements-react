@@ -7,6 +7,16 @@ export const parameters = {
         },
     },
     viewMode: "docs",
+    options: {
+        storySort: {
+            method: "alphabetical",
+            order: [
+                "General",
+                "Layout",
+                "Layer",
+            ],
+        },
+    },
     // previewTabs: {
     //     canvas: { hidden: true },
     // },

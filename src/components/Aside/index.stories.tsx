@@ -3,7 +3,7 @@ import { Aside, Button } from '../..';
 import { Meta } from "@storybook/react";
 
 export default {
-    title: 'Example/Aside',
+    title: 'Layer/Aside',
     component: Aside
 } as Meta;
 
