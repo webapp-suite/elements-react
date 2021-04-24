@@ -9,8 +9,8 @@ mkdir -p static/packages/core/src
 find node_modules/@webapp-suite/elements/src/ -name '*.css' -exec cp -prvf '{}' 'static/packages/core/src' ';'
 
 # Copy assets from storybook
-mkdir -p static/storybook
-find .storybook/ -name '*.ico' -exec cp -prvf '{}' 'static/storybook' ';'
+mkdir -p static/storybook/images
+find .storybook/images -exec cp -prvf '{}' 'static/storybook' ';'
 
 # Copy the test icon for a header storybook story.
 # cp -pvf *.svg static/
