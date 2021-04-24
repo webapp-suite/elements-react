@@ -3,11 +3,11 @@ import React, { MouseEventHandler } from "react";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
 
 export interface ButtonPropTypes extends WebComponentPropTypes {
-    /** Button type to have different style `primary`, `secondary`, `text`, `accept`, `warning`, `danger` */
+    /** Button type to have different style */
     type?: "primary" | "secondary" | "text" | "accept" | "warning" | "danger";
-    /** Size of the button, `macro`, `micro` */
+    /** Size of the button */
     size?: "macro" | "micro";
-    /** Direction of the component 'rtl' or 'ltr' */
+    /** Direction of the component */
     dir?: "rtl" | "ltr";
     /** Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text */
     icon?: string;
