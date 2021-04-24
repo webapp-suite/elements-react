@@ -9,7 +9,7 @@ export default {
 
 // export const Template = (args) => <Aside {...args } />
 
-export const primary = () => {
+export const basic = () => {
     let [showAside, setShowAside] = useState(false);
     return (
         <>

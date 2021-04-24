@@ -11,19 +11,19 @@ export default {
 
 const Template: Story<HeaderProps> = (args) => <Header {...args} />;
 
-export const BasicHeader = Template.bind({});
-BasicHeader.args = {
+export const Basic = Template.bind({});
+Basic.args = {
     title: "My Application",
 };
 
-export const ColorHeader = Template.bind({});
-ColorHeader.args = {
+export const Color = Template.bind({});
+Color.args = {
     color: "blue",
     title: "My Application",
 };
 
-export const ActionHeader = Template.bind({});
-ActionHeader.args = {
+export const Action = Template.bind({});
+Action.args = {
     color: "blue",
     title: "My Application",
     children: <Button>Button</Button>,

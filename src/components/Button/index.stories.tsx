@@ -12,25 +12,19 @@ export default {
 
 const Template: Story<ButtonPropTypes> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Basic = Template.bind({});
+Basic.args = {
+  children: 'Button',
+};
+
+export const Type = Template.bind({});
+Type.args = {
   type: 'primary',
   children: 'Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Button',
-};
-
-export const Macro = Template.bind({});
-Macro.args = {
-  size: 'macro',
-  children: 'Button',
-};
-
-export const Micro = Template.bind({});
-Micro.args = {
+export const Size = Template.bind({});
+Size.args = {
   size: 'micro',
   children: 'Button',
 };

@@ -1,16 +1,16 @@
 import { create } from '@storybook/theming/create';
 
-const TEXT_COLOR = '#32363A';
-const PRIMARY_COLOR = '#00AEFF';
+const TEXT_COLOR = 'rgba(160, 160, 160, 0.95)';
+const PRIMARY_COLOR = '#00AEFF'; // or 0066FF
 
 export const ElementsTheme = create({
   base: 'light',
 
   colorPrimary: TEXT_COLOR, //'#000000',
-  colorSecondary: PRIMARY_COLOR,
+  colorSecondary: PRIMARY_COLOR, // Active color
 
   // UI
-  appBg: '#edeff0',
+  appBg: '#1b2235',
   appContentBg: '#fff',
   appBorderColor: '#CBD7DC',
   appBorderRadius: 4,
@@ -24,9 +24,9 @@ export const ElementsTheme = create({
   textInverseColor: '#00ff00',
 
   // Toolbar default and active colors
-  // barTextColor: '#ffffff',
+  // barTextColor: '#E6ECEF',
   // barSelectedColor: '#ffffff',
-  // barBg: '#0065A3',
+  // barBg: '#506B77',
 
   // Form colors
   inputBg: 'white',
@@ -44,5 +44,5 @@ export const ElementsTheme = create({
    * @type {String}
    */
   brandUrl: '',
-  brandImage: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/white-bg-webapps-ui-blue.png'
+  brandImage: '/storybook/images/logo.png'
 });
