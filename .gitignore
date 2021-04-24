@@ -111,3 +111,4 @@ es/
 package-lock.json
 yarn.lock
 static
+.docz

@@ -20,7 +20,10 @@
         "publish:public": "npm run build && npm publish --access public",
         "prestorybook": "./tasks/copy-static.sh",
         "storybook": "start-storybook -p 6006 -s ./static",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "docz:dev": "docz dev",
+        "docz:build": "docz build",
+        "docz:serve": "docz build && docz serve"
     },
     "eslintConfig": {
         "extends": [
@@ -70,6 +73,7 @@
         "@types/react": "^17.0.1",
         "@types/react-dom": "^17.0.0",
         "babel-loader": "^8.2.2",
+        "docz": "^2.3.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "rimraf": "^3.0.2",
