@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Aside, Button } from '../..';
 import { Meta } from "@storybook/react";
+import { Aside, Button } from '../..';
 
 export default {
     title: 'Layer/Aside',
@@ -9,7 +9,7 @@ export default {
 
 // export const Template = (args) => <Aside {...args } />
 
-export const basic = () => {
+export const Basic = () => {
     let [showAside, setShowAside] = useState(false);
     return (
         <>
