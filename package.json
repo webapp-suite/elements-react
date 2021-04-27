@@ -11,7 +11,7 @@
     ],
     "scripts": {
         "prestart": "npm i",
-        "start": "",
+        "start": "npm run storybook",
         "build": "rimraf es && tsc",
         "test": "",
         "version:major": "npm version major",
@@ -19,7 +19,7 @@
         "version:patch": "npm version patch",
         "publish:public": "npm run build && npm publish --access public",
         "prestorybook": "./tasks/copy-static.sh",
-        "storybook": "start-storybook -p 6006 -s ./static",
+        "storybook": "start-storybook -p 6006 -s ./static --no-manager-cache",
         "build-storybook": "build-storybook"
     },
     "eslintConfig": {
@@ -55,13 +55,13 @@
     },
     "devDependencies": {
         "@babel/core": "^7.13.15",
-        "@storybook/addon-actions": "^6.2.8",
-        "@storybook/addon-controls": "^6.2.8",
-        "@storybook/addon-docs": "^6.2.8",
-        "@storybook/addon-essentials": "^6.2.8",
-        "@storybook/addon-links": "^6.2.8",
-        "@storybook/addon-toolbars": "^6.2.8",
-        "@storybook/react": "^6.2.8",
+        "@storybook/addon-actions": "^6.2.9",
+        "@storybook/addon-controls": "^6.2.9",
+        "@storybook/addon-docs": "^6.2.9",
+        "@storybook/addon-essentials": "^6.2.9",
+        "@storybook/addon-links": "^6.2.9",
+        "@storybook/addon-toolbars": "^6.2.9",
+        "@storybook/react": "^6.2.9",
         "@storybook/theming": "^6.2.9",
         "@testing-library/react": "^11.2.5",
         "@types/classnames": "^2.2.11",

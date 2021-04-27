@@ -1,5 +1,6 @@
 import { addons } from '@storybook/addons';
 import { ElementsTheme } from './theme';
+import React from 'react';
 
 addons.setConfig({
   theme: ElementsTheme,
@@ -12,5 +13,8 @@ addons.setConfig({
    * display horizontal panel that displays addon configurations
    * @type {Boolean}
    */
-  showPanel: true
+  showPanel: true,
+  // sidebar: {
+  //   renderLabel: (item) => <abbr title="...">{item.name}{console.log(item)}</abbr>
+  // }
 });
