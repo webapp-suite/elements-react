@@ -42,4 +42,8 @@ Modal.defaultProps = {
     noPadding: false,
 };
 
+export const ModalBody: React.FC = ({ children }) => <div slot="main">{children}</div>;
+
+export const ModalFooter: React.FC = ({ children }) => <div slot="footer">{children}</div>;
+
 export default Modal;

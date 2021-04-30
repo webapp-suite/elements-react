@@ -1,4 +1,4 @@
-import { Title, Subtitle, Description, Primary, ArgsTable, Stories, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
+import DocsPage from './custom/components/DocsPage';
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,27 +16,9 @@ export const parameters = {
         },
     },
     docs: {
-        page: () => (
-            <>
-                <Title />
-                <Subtitle />
-                <Description />
-                {/* <Primary /> */}
-                <Stories title="Examples" includePrimary />
-                <h2
-                    className="sbdocs sbdocs-h3"
-                    style={{
-                        fontFamily:
-                            '"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif',
-                    }}
-                >
-                    Props
-                </h2>
-                <ArgsTable />
-            </>
-        ),
+        page: DocsPage,
     },
-    // previewTabs: {
-    //     canvas: { hidden: true },
-    // },
+    previewTabs: {
+        canvas: { hidden: true },
+    },
 };

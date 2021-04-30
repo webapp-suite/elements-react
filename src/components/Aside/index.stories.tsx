@@ -4,10 +4,8 @@ import { Aside, Button } from '../..';
 
 export default {
     title: 'Layer/Aside',
-    component: Aside
+    component: Aside,
 } as Meta;
-
-// export const Template = (args) => <Aside {...args } />
 
 export const Basic = () => {
     let [showAside, setShowAside] = useState(false);
@@ -27,3 +25,7 @@ export const Basic = () => {
         </>
     );
 };
+
+// Basic.parameters = {
+//     storyshots: { disable: true }
+// };

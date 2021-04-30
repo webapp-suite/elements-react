@@ -1,7 +1,6 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 
-import Header, { HeaderProps } from ".";
+import Header from ".";
 import Button from "../Button";
 
 export default {
@@ -9,22 +8,16 @@ export default {
     component: Header,
 } as Meta;
 
-const Template: Story<HeaderProps> = (args) => <Header {...args} />;
+export const Basic = () => <Header title="My Application" />;
 
-export const Basic = Template.bind({});
-Basic.args = {
-    title: "My Application",
+Basic.parameters = {
+    docs: {
+        description: {
+            story: "some `stodddry` **markdown**",
+        },
+    },
 };
 
-export const Color = Template.bind({});
-Color.args = {
-    color: "blue",
-    title: "My Application",
-};
+export const Color = () => <Header title="My Application" color="blue" />;
 
-export const Action = Template.bind({});
-Action.args = {
-    color: "blue",
-    title: "My Application",
-    children: <Button>Button</Button>,
-};
+export const Action = () => <Header title="My Application" color="blue"><Button>Button</Button></Header>;
