@@ -1,4 +1,4 @@
-// import '../toc.scss';
+import '../toc.scss';
 import React from 'react';
 
 const Toc = () => {

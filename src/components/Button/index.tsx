@@ -22,6 +22,10 @@ export interface ButtonPropTypes extends WebComponentPropTypes {
     onClick?: MouseEventHandler<HTMLElement>;
 }
 
+/** A **Button** allows users to perform an action. The priority of buttons within a page should be considered.
+For instance, only use the main button once within a page or dialog. Color is also important. For
+instance, the most important button has a blue background where as a red button should only be used if
+the action it performs is potentially destructive. */
 const Button: React.FC<ButtonPropTypes> = convertToWebComponent<ButtonPropTypes>(
     "ts-button",
     ["type", "size", "dir", "icon"],

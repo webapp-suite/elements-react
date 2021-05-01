@@ -1,4 +1,16 @@
 <link rel="icon" href="storybook/images/favicon.ico" />
+<style>
+    div[role="main"] {
+        top: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        height: 100% !important;
+        width: calc(100% - 230px) !important;
+    }
+    div[role="main"] > div {
+        border-radius: 0;
+    }
+</style>
 <!-- <style>
     #storybook-explorer-menu a[data-nodetype="story"] {
         display: none;

@@ -12,16 +12,10 @@ export default {
     }
 } as Meta;
 
+// With `MDX` we can define a story for `Button` right in the middle of our Markdown documentation.
 export const Basic = () => <Button>Default</Button>;
 
-Basic.parameters = {
-    docs: {
-        description: {
-            story: "With `MDX` we can define a story for `Button` right in the middle of our Markdown documentation.",
-        },
-    },
-};
-
+// The `default` and `primary` buttons are used in most cases, you can also use other types in specific scenarios.
 export const Type = () => (
     <Space>
         <Button type="primary">Primary</Button>
@@ -33,27 +27,11 @@ export const Type = () => (
     </Space>
 );
 
-Type.parameters = {
-    docs: {
-        description: {
-            story:
-                "The `default` and `primary` buttons are used in most cases, you can also use other types in specific scenarios.",
-        },
-    },
-};
 
+// Besides default `md` size, Button component provides three additional sizes for you to choose among different scenarios.
 export const Size = () => (
     <Space>
         <Button size="micro">micro</Button>
         <Button size="macro">macro</Button>
     </Space>
 );
-
-Size.parameters = {
-    docs: {
-        description: {
-            story:
-                "Besides default `md` size, Button component provides three additional sizes for you to choose among different scenarios.",
-        },
-    },
-};

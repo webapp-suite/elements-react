@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { useState } from "react";
 
 import { Button } from "../../";
-import Modal, { ModalPropTypes } from "./"
+import Modal, { ModalPropTypes } from "./";
 import Space from "../../stories/Space";
 
 export default {
@@ -10,9 +10,6 @@ export default {
     component: Modal,
     argTypes: {
         backgroundColor: { control: "color" },
-        label: {
-            description: "overwritten description",
-        },
     },
 } as Meta;
 
@@ -38,14 +35,6 @@ export const Basic = () => {
             </Modal>
         </>
     );
-};
-
-Basic.parameters = {
-    docs: {
-        description: {
-            story: "With `MDX` we can define a story for `Button` right in the middle of our Markdown documentation.",
-        },
-    },
 };
 
 export const Size = () => {
@@ -87,13 +76,4 @@ export const Size = () => {
             </Modal>
         </>
     );
-};
-
-Size.parameters = {
-    docs: {
-        description: {
-            story:
-                "The `default` and `primary` buttons are used in most cases, you can also use other types in specific scenarios.",
-        },
-    },
 };

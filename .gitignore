@@ -105,9 +105,7 @@ dist
 
 # Project
 es/
-.npmrc
 .idea
 .vscode
-package-lock.json
-yarn.lock
 static
+.docz

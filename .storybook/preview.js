@@ -8,7 +8,7 @@ export const parameters = {
             date: /Date$/,
         },
     },
-    // viewMode: "docs",
+    viewMode: "docs",
     options: {
         storySort: {
             method: "alphabetical",

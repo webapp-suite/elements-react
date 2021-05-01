@@ -1,23 +1,22 @@
-// import "../custom.scss";
-// import Community from "./Community";
-// import Description from "./Description";
-// import { DocsContext } from "@storybook/addon-docs/blocks";
-// import Footer from "./Footer";
-// import Header from "./Header";
+import "../custom.scss";
+import Community from "./Community";
+import Description from "./Description";
+import Footer from "./Footer";
+import Header from "./Header";
 import Import from "./Import";
 import Toc from "./Toc";
 import tocbot from "tocbot";
 import React, { useContext, useEffect } from "react";
-// import {
-    // Title,
-    // Subtitle,
-    // Description as DocsStoryDescription,
-    // Heading,
-    // Props,
-    // DocsStory,
-// } from "@storybook/addon-docs/blocks";
+import {
+    Title,
+    Subtitle,
+    Description as DocsStoryDescription,
+    Heading,
+    Props,
+    DocsStory,
+    DocsContext,
+} from "@storybook/addon-docs/blocks";
 
-import { Title, Subtitle, Description, DocsContext, ArgsTable, Stories } from "@storybook/addon-docs/blocks";
 import { Root } from "../../../src/index";
 
 const DocsPage = () => {
@@ -66,24 +65,22 @@ const DocsPage = () => {
 
     return (
         <>
+            <Header />
             <Title />
             <Toc />
             <Subtitle />
+            {context?.parameters?.deprecated && <Description desc={context?.parameters?.deprecated} />}
             {!context?.parameters?.noImport && showImport()}
             {context?.parameters?.displaySubComponentImports && showSubImports()}
-            <Description />
-            {/* <Primary /> */}
-            <Stories title="Examples" includePrimary />
-            <h2
-                className="sbdocs sbdocs-h3"
-                style={{
-                    fontFamily:
-                        '"Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif',
-                }}
-            >
-                Props
-            </h2>
-            <ArgsTable />
+            <div className="docs-component-description">
+                <DocsStoryDescription />
+            </div>
+            <Heading>Examples</Heading>
+            {stories.map((story) => story && <DocsStory key={story.id} {...story} />)}
+            <Heading>Properties</Heading>
+            <Props />
+            <Community />
+            <Footer />
         </>
     );
 };
