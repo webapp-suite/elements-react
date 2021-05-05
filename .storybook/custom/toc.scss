@@ -4,7 +4,7 @@
 // table of contents (tocbot) overrides
 .toc {
     box-sizing: border-box;
-    background-color: white;
+    background-color: hsl(204, 22%, 95%);
 
     > .toc-list {
         padding-left: 0;
@@ -35,7 +35,7 @@ a.toc-link {
     .toc {
         width: 200px;
         position: fixed;
-        top: 0;
+        top: 25px;
         right: 0;
         padding: 75px 0 0 0;
         height: 100%;

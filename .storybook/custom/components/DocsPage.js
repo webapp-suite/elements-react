@@ -65,8 +65,8 @@ const DocsPage = () => {
 
     return (
         <>
-            <Header />
-            <Title />
+            <Header title={context.kind.split("/")?.[1]}/>
+            {/* <Title /> */}
             <Toc />
             <Subtitle />
             {context?.parameters?.deprecated && <Description desc={context?.parameters?.deprecated} />}
