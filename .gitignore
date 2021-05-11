@@ -109,3 +109,5 @@ es/
 .vscode
 static
 .docz
+src/**/*/__stories__/*.visual.tsx
+storybook-static
