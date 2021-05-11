@@ -4,7 +4,7 @@ import Header from "../../Header";
 import Button from "../../Button";
 
 export default {
-    title: "Layout/Icon",
+    title: "General/Icon",
     component: Header,
 } as Meta;
 

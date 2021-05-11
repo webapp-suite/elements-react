@@ -4,7 +4,7 @@ import Header from "../../Header";
 import Button from "../../Button";
 
 export default {
-    title: "Layout/Tooltip",
+    title: "Data Display/Tooltip",
     component: Header,
 } as Meta;
 
