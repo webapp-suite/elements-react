@@ -3,8 +3,10 @@ const { merge } = require('webpack-merge');
 
 const maxAssetSize = 1024 * 1024;
 
+const includedStories = process.env.STORYBOOK_ENV === 'docs' ? '(stories)' : '(stories|visual)';
+
 module.exports = {
-    stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+    stories: ["../src/**/*.stories.mdx", `../src/**/*.@${includedStories}.tsx`],
     addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",

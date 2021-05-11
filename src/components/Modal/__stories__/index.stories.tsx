@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
 import { useState } from "react";
 
-import { Button } from "../../";
-import Modal, { ModalPropTypes } from "./";
-import Space from "../../stories/Space";
+import { Button } from "../../..";
+import Modal, { ModalPropTypes } from "..";
+import Space from "../../../stories/Space";
 
 export default {
     title: "Layer/Modal",

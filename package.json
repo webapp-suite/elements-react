@@ -13,14 +13,15 @@
         "prestart": "npm i",
         "start": "npm run storybook",
         "build": "rimraf es && tsc",
+        "build:storybook": "babel-node devtools/buildVisualStories.js",
         "test": "",
         "version:major": "npm version major",
         "version:minor": "npm version minor",
         "version:patch": "npm version patch",
         "publish:public": "npm run build && npm publish --access public",
         "prestorybook": "./tasks/copy-static.sh",
-        "storybook": "start-storybook -p 6006 -s ./static --no-manager-cache",
-        "build-storybook": "build-storybook"
+        "storybook": "start-storybook -p 6006 ---static-dir ./static --no-manager-cache",
+        "storybook:static": "npm run prestorybook && npm run build:storybook && STORYBOOK_ENV=docs build-storybook --static-dir ./static --docs --no-dll"
     },
     "eslintConfig": {
         "extends": [
@@ -55,6 +56,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.13.15",
+        "@babel/node": "^7.13.13",
         "@storybook/addon-actions": "^6.2.9",
         "@storybook/addon-controls": "^6.2.9",
         "@storybook/addon-docs": "^6.2.9",
@@ -69,6 +71,7 @@
         "@types/node": "^14.14.22",
         "@types/react": "^17.0.1",
         "@types/react-dom": "^17.0.0",
+        "@types/rimraf": "^3.0.0",
         "babel-loader": "^8.2.2",
         "css-loader": "^5.2.4",
         "node-sass": "^5.0.0",

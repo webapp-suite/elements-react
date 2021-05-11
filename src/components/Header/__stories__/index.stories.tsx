@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react";
 
-import Header from ".";
-import Button from "../Button";
+import Header from "..";
+import Button from "../../Button";
 
 export default {
     title: "Layout/Header",

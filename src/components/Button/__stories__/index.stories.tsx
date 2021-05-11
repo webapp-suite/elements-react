@@ -1,15 +1,11 @@
 import { Meta } from "@storybook/react";
 
-import Button, { ButtonPropTypes } from ".";
-import Space from "../../stories/Space";
+import Button, { ButtonPropTypes } from "..";
+import Space from "../../../stories/Space";
 
 export default {
     title: "General/Button",
     component: Button,
-    description: 'dede',
-    argTypes: {
-        backgroundColor: { control: "color" },
-    }
 } as Meta;
 
 // With `MDX` we can define a story for `Button` right in the middle of our Markdown documentation.
@@ -26,7 +22,6 @@ export const Type = () => (
         <Button type="text">Text</Button>
     </Space>
 );
-
 
 // Besides default `md` size, Button component provides three additional sizes for you to choose among different scenarios.
 export const Size = () => (

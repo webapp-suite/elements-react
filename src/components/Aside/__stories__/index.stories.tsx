@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Meta } from "@storybook/react";
-import { Aside, Button } from '../..';
+import { Aside, Button } from '../../..';
 
 export default {
     title: 'Layer/Aside',
