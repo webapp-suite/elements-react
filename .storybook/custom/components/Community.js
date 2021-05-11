@@ -15,11 +15,11 @@ const Community = () => {
         <section>
         <h4>Community</h4>
             <ul>
-                <li><a href='https://github.com/webapp-suite/elements' target='_blank'><img src='/storybook/images/github.png' alt='github logo'/>github.com/webapp-suite/elements</a></li>
-                <li><a href='' target='_blank'><img src='/storybook/images/twitter.png' alt='twitter logo'/>twitter.com/webapp-suite/elements</a></li>
+                <li><a href='https://github.com/webapp-suite/elements' target='_blank'><img src='./storybook/images/github.png' alt='github logo'/>github.com/webapp-suite/elements</a></li>
+                <li><a href='' target='_blank'><img src='./storybook/images/twitter.png' alt='twitter logo'/>twitter.com/webapp-suite/elements</a></li>
                 <li><a href='' target='_blank'>
-                    <img src='/storybook/images/slack.png' alt='slack logo'/>ui-webapp-suite-slack.com</a></li>
-                <li><a href='' target='_blank'><img src='/storybook/images/linkedin.png' alt='linkedin logo'/>linkedin.com/company/webapp-suite</a></li>
+                    <img src='./storybook/images/slack.png' alt='slack logo'/>ui-webapp-suite-slack.com</a></li>
+                <li><a href='' target='_blank'><img src='./storybook/images/linkedin.png' alt='linkedin logo'/>linkedin.com/company/webapp-suite</a></li>
             </ul>
         </section>
     </div>

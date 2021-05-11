@@ -44,5 +44,5 @@ export const ElementsTheme = create({
    * @type {String}
    */
   brandUrl: '',
-  brandImage: '/storybook/images/logo.png'
+  brandImage: './storybook/images/logo.png'
 });
