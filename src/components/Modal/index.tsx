@@ -17,24 +17,38 @@ export interface ModalPropTypes extends WebComponentPropTypes {
     onClose?: (event: CustomEvent) => void;
 }
 
-const Modal: React.FC<ModalPropTypes> = (props) => {
-    const container = document.createElement("div");
-    useEffect(() => {
-        let hasAppended = false;
-        if (props.visible) {
-            document.body.appendChild(container);
+class Modal extends React.Component<ModalPropTypes> {
+    container: HTMLDivElement;
+    static defaultProps: ModalPropTypes;
+    constructor(props: ModalPropTypes) {
+        super(props);
+        this.container = document.createElement("div");
+    }
+
+    componentDidUpdate(prevProps: ModalPropTypes) {
+        // Open
+        if (!prevProps.visible && this.props.visible) {
+            document.body.appendChild(this.container);
             document.body.setAttribute("style", "width: 100%;height: 100%;position: fixed;overflow: hidden;");
-            hasAppended = true;
         }
-        return () => {
-            if (hasAppended) {
-                document.body.removeChild(container);
-                document.body.removeAttribute("style");
-            }
-        };
-    }, [props.visible]);
-    return createPortal(<OriginalModal {...props}>{props.children}</OriginalModal>, container);
-};
+        // Close
+        if (prevProps.visible && !this.props.visible) {
+            document.body.removeChild(this.container);
+            document.body.removeAttribute("style");
+        }
+    }
+
+    componentWillUnmount() {
+        if (document.body.contains(this.container)) {
+            document.body.removeChild(this.container);
+            document.body.removeAttribute("style");
+        }
+    }
+
+    render() {
+        return createPortal(<OriginalModal {...this.props}>{this.props.children}</OriginalModal>, this.container);
+    }
+}
 
 const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropTypes>(
     "ts-modal",

@@ -9,7 +9,7 @@ export interface AsidePropTypes extends WebComponentPropTypes {
     /** Aside header title */
     title?: string;
     /** Direction of the component 'rtl' or 'ltr' */
-    dir?: "rtl" | "ltr";
+    dir?: "rtl" | "ltr" | "auto";
     /** If it exist as an attribute, the aside would show a spinner in it with the provided value of this attribute as the message of it */
     busy?: string;
     /** Disable closing the aside with escape key */
@@ -24,24 +24,38 @@ export interface AsidePropTypes extends WebComponentPropTypes {
     onClosed?: (event: CustomEvent) => void;
 }
 
-const Aside: React.FC<AsidePropTypes> = (props) => {
-    const container = document.createElement("div");
-    useEffect(() => {
-        let hasAppended = false;
-        if (props.visible) {
-            document.body.appendChild(container);
+class Aside extends React.Component<AsidePropTypes> {
+    container: HTMLDivElement;
+    static defaultProps: AsidePropTypes;
+    constructor(props: AsidePropTypes) {
+        super(props);
+        this.container = document.createElement("div");
+    }
+
+    componentDidUpdate(prevProps: AsidePropTypes) {
+        // Open
+        if (!prevProps.visible && this.props.visible) {
+            document.body.appendChild(this.container);
             document.body.setAttribute("style", "width: 100%;height: 100%;position: fixed;overflow: hidden;");
-            hasAppended = true;
         }
-        return () => {
-            if (hasAppended) {
-                document.body.removeChild(container);
-                document.body.removeAttribute("style");
-            }
-        };
-    }, [props.visible]);
-    return createPortal(<OriginalAside {...props}>{props.children}</OriginalAside>, container);
-};
+        // Close
+        if (prevProps.visible && !this.props.visible) {
+            document.body.removeChild(this.container);
+            document.body.removeAttribute("style");
+        }
+    }
+
+    componentWillUnmount() {
+        if (document.body.contains(this.container)) {
+            document.body.removeChild(this.container);
+            document.body.removeAttribute("style");
+        }
+    }
+
+    render() {
+        return createPortal(<OriginalAside {...this.props}>{this.props.children}</OriginalAside>, this.container);
+    }
+}
 
 const OriginalAside: React.FC<AsidePropTypes> = convertToWebComponent<AsidePropTypes>(
     "ts-aside",

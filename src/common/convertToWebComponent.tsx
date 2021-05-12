@@ -109,13 +109,14 @@ export const convertToWebComponent = <T extends Record<string, any>>(
         useEffect(
             () => {
                 eventProperties.forEach((eventName) => {
-                    const eventHandler = rest[
-                        createEventPropName(mapProperties[eventName] ?? eventName)
-                    ] as EventHandler;
+                    const eventHandler = rest[createEventPropName(eventName)] as EventHandler;
                     if (typeof eventHandler === "function") {
                         eventRegistry.current[eventName] = eventHandler;
                         // @ts-ignore
-                        ref.current.addEventListener(eventName, eventRegistry.current[eventName]);
+                        ref.current?.addEventListener(
+                            mapProperties[eventName] ?? eventName,
+                            eventRegistry.current[eventName]
+                        );
                     }
                 });
 
@@ -123,11 +124,14 @@ export const convertToWebComponent = <T extends Record<string, any>>(
                     // eslint-disable-next-line guard-for-in
                     for (const eventName in eventRegistry.current) {
                         // @ts-ignore
-                        ref.current?.removeEventListener(eventName, eventRegistry.current[eventName]);
+                        ref.current?.removeEventListener(
+                            mapProperties[eventName] ?? eventName,
+                            eventRegistry.current[eventName]
+                        );
                     }
                 };
             },
-            eventProperties.map((eventName) => rest[createEventPropName(mapProperties[eventName] ?? eventName)])
+            eventProperties.map((eventName) => rest[createEventPropName(eventName)])
         );
 
         // non web component related props, just pass them
@@ -138,7 +142,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
             .filter(
                 ([key]) =>
                     !eventProperties
-                        .map((eventName) => createEventPropName(mapProperties[eventName] ?? eventName))
+                        .map((eventName) => createEventPropName(eventName))
                         .includes(key)
             )
             .reduce((acc, [key, val]) => ({ ...acc, [key]: val }), {});

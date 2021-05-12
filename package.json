@@ -14,6 +14,7 @@
         "start": "npm run storybook",
         "build": "rimraf es && tsc",
         "build:storybook": "babel-node devtools/buildVisualStories.js",
+        "predeploy": "npm run storybook:static",
         "deploy": "gh-pages -d storybook-static",
         "test": "",
         "version:major": "npm version major",

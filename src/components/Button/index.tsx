@@ -13,7 +13,7 @@ export interface ButtonPropTypes extends WebComponentPropTypes {
     icon?: string;
     /** Show busy/loading animation */
     busy?: boolean;
-    /** Determine if the button is disabled. `button-click` event won't be dispatched */
+    /** Determine if the button is disabled. `onClick` event won't be dispatched */
     disabled?: boolean;
     /** For internal use in `ts-button-group` component */
     grouped?: boolean;
