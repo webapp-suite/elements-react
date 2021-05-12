@@ -21,7 +21,7 @@
         "version:patch": "npm version patch",
         "publish:public": "npm run build && npm publish --access public",
         "prestorybook": "./tasks/copy-static.sh",
-        "storybook": "start-storybook -p 6006 ---static-dir ./static --no-manager-cache",
+        "storybook": "start-storybook -p 6006 --static-dir ./static --no-manager-cache",
         "storybook:static": "npm run prestorybook && npm run build:storybook && STORYBOOK_ENV=docs build-storybook --static-dir ./static --docs --no-dll"
     },
     "eslintConfig": {
