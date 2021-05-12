@@ -22,15 +22,11 @@ export const Basic = () => {
             </Button>
             <Modal onClose={() => setShowModal(false)} visible={showModal} title="Basic Modal">
                 <div slot="main">
-                    <p>
-                        <b>The new product have been added to your catalog.</b>
-                    </p>
-                    <p>
-                        Automatic Product ID: <b>PD-3465334</b>
-                    </p>
-                    <p>
-                        Expiration date: <b>13/03/2018</b>
-                    </p>
+                    Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
+                    shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
+                    pork chop. Short ribs tail shank, alcatra kevin spare ribs meatloaf beef. Pork loin salami flank
+                    andouille prosciutto chuck bresaola sirloin ribeye. Bacon picanha salami filet mignon capicola beef
+                    ribs. Venison jowl meatloaf jerky porchetta, brisket shank picanha.
                 </div>
             </Modal>
         </>
@@ -61,17 +57,18 @@ export const Size = () => {
                     Show Medium Modal
                 </Button>
             </Space>
-            <Modal onClose={() => setShowModal(false)} visible={showModal} size={size} title="Size Modal">
+            <Modal
+                onClose={() => setShowModal(false)}
+                visible={showModal}
+                size={size}
+                title={`${size} Modal`.replace(/^\S/, (s) => s.toUpperCase())}
+            >
                 <div slot="main">
-                    <p>
-                        <b>The new product have been added to your catalog.</b>
-                    </p>
-                    <p>
-                        Automatic Product ID: <b>PD-3465334</b>
-                    </p>
-                    <p>
-                        Expiration date: <b>13/03/2018</b>
-                    </p>
+                    Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
+                    shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
+                    pork chop. Short ribs tail shank, alcatra kevin spare ribs meatloaf beef. Pork loin salami flank
+                    andouille prosciutto chuck bresaola sirloin ribeye. Bacon picanha salami filet mignon capicola beef
+                    ribs. Venison jowl meatloaf jerky porchetta, brisket shank picanha.
                 </div>
             </Modal>
         </>

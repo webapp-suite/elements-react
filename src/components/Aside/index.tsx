@@ -1,5 +1,6 @@
 import '@webapp-suite/elements.aside';
-import React from "react";
+import React, { useEffect } from "react";
+import { createPortal } from 'react-dom';
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
 
 export interface AsidePropTypes extends WebComponentPropTypes {
@@ -23,7 +24,26 @@ export interface AsidePropTypes extends WebComponentPropTypes {
     onClosed?: (event: CustomEvent) => void;
 }
 
-const Aside: React.FC<AsidePropTypes> = convertToWebComponent<AsidePropTypes>(
+const Aside: React.FC<AsidePropTypes> = (props) => {
+    const container = document.createElement("div");
+    useEffect(() => {
+        let hasAppended = false;
+        if (props.visible) {
+            document.body.appendChild(container);
+            document.body.setAttribute("style", "width: 100%;height: 100%;position: fixed;overflow: hidden;");
+            hasAppended = true;
+        }
+        return () => {
+            if (hasAppended) {
+                document.body.removeChild(container);
+                document.body.removeAttribute("style");
+            }
+        };
+    }, [props.visible]);
+    return createPortal(<OriginalAside {...props}>{props.children}</OriginalAside>, container);
+};
+
+const OriginalAside: React.FC<AsidePropTypes> = convertToWebComponent<AsidePropTypes>(
     "ts-aside",
     ["title", "dir", "size", "busy"],
     ["visible", "noCloseOnEscKey"],
@@ -35,8 +55,6 @@ const Aside: React.FC<AsidePropTypes> = convertToWebComponent<AsidePropTypes>(
         busy: "data-busy"
     }
 );
-
-Aside.displayName = "Aside";
 
 Aside.defaultProps = {
     visible: false,
