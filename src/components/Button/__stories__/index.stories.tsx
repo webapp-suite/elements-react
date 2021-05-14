@@ -33,10 +33,10 @@ export const Size = () => (
 
 // Bind the click event on the Button.
 export const Click = () => (
-    <Button onClick={() => alert('Clicked!')}>micro</Button>
+    <Button onClick={() => alert('Clicked!')}>Click</Button>
 );
 
 // Determine if the button is disabled. `onClick` event won't be dispatched.
 export const Disabled = () => (
-    <Button disabled onClick={() => alert('Clicked!')}>micro</Button>
+    <Button disabled onClick={() => alert('Clicked!')}>Disabled</Button>
 );
