@@ -18,6 +18,5 @@
         "outDir": "./es",
         "declaration": true
     },
-    "include": ["src"],
-    "exclude": ["src/**/*/__stories__"],
+    "include": ["src"]
 }
