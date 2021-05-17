@@ -14,7 +14,7 @@ export const Basic = () => {
             <Button type="primary" onClick={() => setShowAside(true)}>
                 Show Aside
             </Button>
-            <Aside onClose={() => setShowAside(false)} visible={showAside} title="Aside">
+            <Aside onClose={() => setShowAside(false)} visible={showAside} title="Aside" appendOnBody>
                 <div slot="main">
                     These oft shamed not mothernot now harolds tear congealed virtues. To hall riot awake parasites ye
                     his mirthful beyond. Such sighed his start glee had soon yes if, domestic days for labyrinth her

@@ -20,7 +20,7 @@ export const Basic = () => {
             <Button type="primary" onClick={() => setShowModal(true)}>
                 Show Modal
             </Button>
-            <Modal onClose={() => setShowModal(false)} visible={showModal} title="Basic Modal">
+            <Modal onClose={() => setShowModal(false)} visible={showModal} title="Basic Modal" appendOnBody>
                 <div slot="main">
                     Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
                     shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
@@ -62,6 +62,7 @@ export const Size = () => {
                 visible={showModal}
                 size={size}
                 title={`${size} Modal`.replace(/^\S/, (s) => s.toUpperCase())}
+                appendOnBody
             >
                 <div slot="main">
                     Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs

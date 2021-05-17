@@ -1,6 +1,6 @@
-import '@webapp-suite/elements.aside';
+import "@webapp-suite/elements.aside";
 import React, { useEffect } from "react";
-import { createPortal } from 'react-dom';
+import { createPortal } from "react-dom";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
 
 export interface AsidePropTypes extends WebComponentPropTypes {
@@ -14,6 +14,8 @@ export interface AsidePropTypes extends WebComponentPropTypes {
     busy?: string;
     /** Disable closing the aside with escape key */
     noCloseOnEscKey?: boolean;
+    /** Whether append aside on the body as the last children */
+    appendOnBody?: boolean;
     /** Emitted when the aside is about to be opened */
     onOpen?: (event: CustomEvent) => void;
     /** Emitted when the aside is about to be closed */
@@ -24,7 +26,7 @@ export interface AsidePropTypes extends WebComponentPropTypes {
     onClosed?: (event: CustomEvent) => void;
 }
 
-class Aside extends React.Component<AsidePropTypes> {
+class BodyAside extends React.Component<AsidePropTypes> {
     container: HTMLDivElement;
     static defaultProps: AsidePropTypes;
     constructor(props: AsidePropTypes) {
@@ -66,15 +68,23 @@ const OriginalAside: React.FC<AsidePropTypes> = convertToWebComponent<AsidePropT
     {
         title: "data-title",
         visible: "data-visible",
-        busy: "data-busy"
+        busy: "data-busy",
     }
 );
+
+const Aside: React.FC<AsidePropTypes> = (props) => {
+    if (props.appendOnBody) {
+        return <BodyAside {...props} />;
+    }
+    return <OriginalAside {...props} />;
+};
 
 Aside.defaultProps = {
     visible: false,
     title: "",
     dir: "ltr",
-    noCloseOnEscKey: false
+    noCloseOnEscKey: false,
+    appendOnBody: false,
 };
 
 export default Aside;

@@ -11,13 +11,15 @@ export interface ModalPropTypes extends WebComponentPropTypes {
     noCloseOnEscKey?: boolean;
     hideHeader?: boolean;
     noPadding?: boolean;
+    /** Whether append aside on the body as the last children */
+    appendOnBody?: boolean;
     onOpened?: (event: CustomEvent) => void;
     onClosed?: (event: CustomEvent) => void;
     onOpen?: (event: CustomEvent) => void;
     onClose?: (event: CustomEvent) => void;
 }
 
-class Modal extends React.Component<ModalPropTypes> {
+class BodyModal extends React.Component<ModalPropTypes> {
     container: HTMLDivElement;
     static defaultProps: ModalPropTypes;
     constructor(props: ModalPropTypes) {
@@ -64,6 +66,13 @@ const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropT
     }
 );
 
+const Modal: React.FC<ModalPropTypes> = (props) => {
+    if (props.appendOnBody) {
+        return <BodyModal {...props} />;
+    }
+    return <OriginalModal {...props} />;
+};
+
 Modal.defaultProps = {
     visible: false,
     title: "",
@@ -72,6 +81,7 @@ Modal.defaultProps = {
     noCloseOnEscKey: false,
     hideHeader: false,
     noPadding: false,
+    appendOnBody: false,
 };
 
 export const ModalBody: React.FC = ({ children }) => <div slot="main">{children}</div>;
