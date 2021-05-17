@@ -1,7 +1,7 @@
 {
     "name": "@webapp-suite/elements-react",
     "description": "Webapp suite elements library using react",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "module": "es/index.js",
     "types": "es/index.d.ts",
     "files": [
