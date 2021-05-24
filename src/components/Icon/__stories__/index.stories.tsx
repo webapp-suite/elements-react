@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/react";
+import { types } from "../../../common/utils";
 
 import Icon from "../../Icon";
 
@@ -55,10 +56,20 @@ export const Size = () => (
     </>
 );
 
+export const Type = () => (
+    <>
+        {Object.keys(types).map((type) => (
+            <Icon icon="info" type={type} />
+        ))}
+    </>
+);
+
+export const circular = () => <Icon icon="info" circular />;
+
 export const AllIcons = () => (
     <>
         {icons.map((icon) => (
-            <Icon icon={icon} size="large" />
+            <Icon icon={icon} />
         ))}
     </>
 );

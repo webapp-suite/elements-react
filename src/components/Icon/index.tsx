@@ -1,6 +1,7 @@
 import "@webapp-suite/elements.icon";
 import React from "react";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
+import { sizes, types } from "../../common/utils";
 
 export interface IconPropTypes extends WebComponentPropTypes {
     /** Icon name, ex: 'arrow-up' */
@@ -22,12 +23,13 @@ const Icon: React.FC<IconPropTypes> = convertToWebComponent<IconPropTypes>(
     ["icon", "size", "type", "rotate", "flip"],
     ["circular"],
     [],
-    ["click"],
+    [],
     {}
 );
 
 Icon.defaultProps = {
-    size: "medium",
+    size: sizes.MEDIUM,
+    type: types.DEFAULT,
     circular: false,
 };
 
