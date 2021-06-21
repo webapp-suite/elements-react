@@ -2,6 +2,7 @@ import { Meta } from "@storybook/react";
 
 import Dialog from "../../Dialog";
 import Button from "../../Button";
+import Space from "../../../stories/Space";
 
 export default {
     title: "Layer/Dialog",
@@ -21,7 +22,7 @@ export const Basic = () => (
 );
 
 export const Type = () => (
-    <>
+    <Space>
         <Button
             onClick={() => {
                 Dialog.info({
@@ -49,5 +50,5 @@ export const Type = () => (
         >
             danger
         </Button>
-    </>
+    </Space>
 );

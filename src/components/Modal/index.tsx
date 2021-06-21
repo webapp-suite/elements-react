@@ -20,6 +20,7 @@ const Footer = styled.div`
 export interface ModalPropTypes extends WebComponentPropTypes {
     visible: boolean;
     title?: string;
+    width?: string;
     dir?: "rtl" | "ltr" | "auto";
     size?: "small" | "medium" | "large";
     noCloseOnEscKey?: boolean;
@@ -68,12 +69,13 @@ class BodyModal extends React.Component<ModalPropTypes> {
 
 const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropTypes>(
     "ts-modal",
-    ["title", "dir", "size"],
+    ["title", "dir", "size", "width"],
     ["visible", "noCloseOnEscKey", "hideHeader", "noPadding"],
     ["note", "main", "footer"],
     ["opened", "closed", "open", "close"],
     {
         title: "data-title",
+        width: "data-width",
         dir: "data-dir",
         size: "data-size",
         visible: "data-visible",
@@ -93,7 +95,7 @@ Modal.defaultProps = {
     visible: false,
     title: "",
     dir: "ltr",
-    size: "large",
+    size: "medium",
     noCloseOnEscKey: false,
     hideHeader: false,
     noPadding: false,

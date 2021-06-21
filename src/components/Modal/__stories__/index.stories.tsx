@@ -15,14 +15,14 @@ export default {
     },
 } as Meta;
 
-export const Basic = () => {
+export const Default = () => {
     let [showModal, setShowModal] = useState(false);
     return (
         <>
             <Button type="primary" onClick={() => setShowModal(true)}>
-                Show Modal
+                Default Modal
             </Button>
-            <Modal onClose={() => setShowModal(false)} visible={showModal} title="Basic Modal" appendOnBody>
+            <Modal onClose={() => setShowModal(false)} visible={showModal} title="Default Modal" appendOnBody>
                 <ModalBody>
                     Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
                     shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
@@ -47,7 +47,7 @@ export const Size = () => {
                         setSize("small");
                     }}
                 >
-                    Show Small Modal
+                    Small Modal
                 </Button>
                 <Button
                     onClick={() => {
@@ -55,7 +55,15 @@ export const Size = () => {
                         setSize("medium");
                     }}
                 >
-                    Show Medium Modal
+                    Medium Modal
+                </Button>
+                <Button
+                    onClick={() => {
+                        setShowModal(true);
+                        setSize("large");
+                    }}
+                >
+                    Large Modal
                 </Button>
             </Space>
             <Modal
@@ -77,18 +85,36 @@ export const Size = () => {
     );
 };
 
+export const CustomizedWidth = () => {
+    let [showModal, setShowModal] = useState(false);
+    return (
+        <>
+            <Button onClick={() => setShowModal(true)}>Modal With Customized Width</Button>
+            <Modal
+                onClose={() => setShowModal(false)}
+                visible={showModal}
+                title="Modal With Customized Width"
+                width="500px"
+                appendOnBody
+            >
+                <ModalBody>
+                    Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
+                    shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
+                    pork chop. Short ribs tail shank, alcatra kevin spare ribs meatloaf beef. Pork loin salami flank
+                    andouille prosciutto chuck bresaola sirloin ribeye. Bacon picanha salami filet mignon capicola beef
+                    ribs. Venison jowl meatloaf jerky porchetta, brisket shank picanha.
+                </ModalBody>
+            </Modal>
+        </>
+    );
+};
+
 export const Footer = () => {
     let [showModal, setShowModal] = useState(false);
     return (
         <>
-            <Button onClick={() => setShowModal(true)}>Show Modal With Footer</Button>
-            <Modal
-                onClose={() => setShowModal(false)}
-                visible={showModal}
-                title="Modal With Footer"
-                size="medium"
-                appendOnBody
-            >
+            <Button onClick={() => setShowModal(true)}>Modal With Footer</Button>
+            <Modal onClose={() => setShowModal(false)} visible={showModal} title="Modal With Footer" appendOnBody>
                 <ModalBody>
                     Modal ipsum dolor amet jerky sausage pork belly tenderloin burgdoggen kevin prosciutto beef ribs
                     shoulder tri-tip salami ribeye turducken rump. Rump prosciutto ham, kevin picanha drumstick chuck
