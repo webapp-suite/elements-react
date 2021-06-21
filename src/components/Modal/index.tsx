@@ -1,7 +1,21 @@
 import "@webapp-suite/elements.modal";
-import React, { useEffect } from "react";
+import React from "react";
 import { createPortal } from "react-dom";
+import styled from "styled-components";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
+
+const Footer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #eff3f5;
+    height: 60px;
+    border-top: 1px solid rgb(203, 215, 220);
+    > ts-button {
+        margin-right: 10px;
+    }
+`;
 
 export interface ModalPropTypes extends WebComponentPropTypes {
     visible: boolean;
@@ -66,7 +80,9 @@ const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropT
     }
 );
 
-const Modal: React.FC<ModalPropTypes> = (props) => {
+export type ModalStatic = Record<"ModalBody" | "ModalFooter", React.FC>;
+
+const Modal: React.FC<ModalPropTypes> & ModalStatic = (props) => {
     if (props.appendOnBody) {
         return <BodyModal {...props} />;
     }
@@ -86,6 +102,13 @@ Modal.defaultProps = {
 
 export const ModalBody: React.FC = ({ children }) => <div slot="main">{children}</div>;
 
-export const ModalFooter: React.FC = ({ children }) => <div slot="footer">{children}</div>;
+export const ModalFooter: React.FC = ({ children }) => (
+    <div slot="footer">
+        <Footer>{children}</Footer>
+    </div>
+);
+
+Modal.ModalBody = ModalBody;
+Modal.ModalFooter = ModalFooter;
 
 export default Modal;
