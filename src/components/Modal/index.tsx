@@ -3,6 +3,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
+import { CommonProps } from "../../interfaces/CommonProps";
 
 const Footer = styled.div`
     display: flex;
@@ -82,7 +83,7 @@ const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropT
     }
 );
 
-export type ModalStatic = Record<"ModalBody" | "ModalFooter", React.FC>;
+export type ModalStatic = Record<"ModalBody" | "ModalFooter", React.FC<CommonProps>>;
 
 const Modal: React.FC<ModalPropTypes> & ModalStatic = (props) => {
     if (props.appendOnBody) {
@@ -102,10 +103,10 @@ Modal.defaultProps = {
     appendOnBody: false,
 };
 
-export const ModalBody: React.FC = ({ children }) => <div slot="main">{children}</div>;
+export const ModalBody: React.FC<CommonProps> = ({ children, ...restProps }) => <div slot="main" {...restProps}>{children}</div>;
 
-export const ModalFooter: React.FC = ({ children }) => (
-    <div slot="footer">
+export const ModalFooter: React.FC<CommonProps> = ({ children, ...restProps }) => (
+    <div slot="footer" {...restProps}>
         <Footer>{children}</Footer>
     </div>
 );
