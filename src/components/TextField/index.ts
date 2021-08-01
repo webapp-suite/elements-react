@@ -5,8 +5,8 @@ import {
     WebComponentPropTypes,
 } from '@/common/convertToWebComponent';
 
-export interface ButtonPropTypes extends WebComponentPropTypes {
-    /** Button type to have different style */
+export interface TextFieldPropTypes extends WebComponentPropTypes {
+    /** TextField type to have different style */
     type?: 'primary' | 'secondary' | 'text' | 'accept' | 'warning' | 'danger';
     /** Size of the button */
     size?: 'macro' | 'micro';
@@ -25,12 +25,12 @@ export interface ButtonPropTypes extends WebComponentPropTypes {
     onClick?: MouseEventHandler<HTMLElement>;
 }
 
-/** A **Button** allows users to perform an action. The priority of buttons within a page should be considered.
+/** A **TextField** allows users to perform an action. The priority of buttons within a page should be considered.
 For instance, only use the main button once within a page or dialog. Color is also important. For
 instance, the most important button has a blue background where as a red button should only be used if
 the action it performs is potentially destructive. */
-const Button: React.FC<ButtonPropTypes> =
-    convertToWebComponent<ButtonPropTypes>(
+const TextField: React.FC<TextFieldPropTypes> =
+    convertToWebComponent<TextFieldPropTypes>(
         'ts-button',
         ['type', 'size', 'dir', 'icon'],
         ['busy', 'disabled', 'grouped', 'focused'],
@@ -41,9 +41,9 @@ const Button: React.FC<ButtonPropTypes> =
         },
     );
 
-Button.displayName = 'Button';
+TextField.displayName = 'TextField';
 
-Button.defaultProps = {
+TextField.defaultProps = {
     type: 'secondary',
     busy: false,
     dir: 'ltr',
@@ -52,4 +52,4 @@ Button.defaultProps = {
     focused: false,
 };
 
-export default Button;
+export default TextField;
