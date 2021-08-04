@@ -1,32 +1,36 @@
-import { Meta } from "@storybook/react";
+# Dialog
 
-import Dialog from "../../Dialog";
-import Button from "../../Button";
-import Space from "../../../stories/Space";
+## Basic
 
-export default {
-    title: "Layer/Dialog",
-    component: Dialog,
-} as Meta;
+```tsx
+import React from 'react';
+import { Button, Dialog } from '@webapp-suite/elements-react';
 
-export const Basic = () => (
+export default () => (
     <Button
         onClick={() => {
             Dialog.info({
-                text: "This is info hint text !",
+                text: 'This is info hint text !',
             });
         }}
     >
         info
     </Button>
 );
+```
 
-export const Type = () => (
+## Type
+
+```tsx
+import React from 'react';
+import { Button, Space, Dialog } from '@webapp-suite/elements-react';
+
+export default () => (
     <Space>
         <Button
             onClick={() => {
                 Dialog.info({
-                    text: "This is info hint text !",
+                    text: 'This is info hint text !',
                 });
             }}
         >
@@ -35,7 +39,7 @@ export const Type = () => (
         <Button
             onClick={() => {
                 Dialog.warning({
-                    text: "This is warning hint text !",
+                    text: 'This is warning hint text !',
                 });
             }}
         >
@@ -44,7 +48,7 @@ export const Type = () => (
         <Button
             onClick={() => {
                 Dialog.danger({
-                    text: "This is danger hint text !",
+                    text: 'This is danger hint text !',
                 });
             }}
         >
@@ -52,3 +56,6 @@ export const Type = () => (
         </Button>
     </Space>
 );
+```
+
+<API></API>

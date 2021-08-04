@@ -1,13 +1,5 @@
 # Modal
 
-<Alert type="success">
-Good:
-- 
-</Alert>
-<Alert type="error">
-Bad
-</Alert>
-
 ## Default
 
 ```tsx
