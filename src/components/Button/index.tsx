@@ -1,14 +1,17 @@
 import '@webapp-suite/elements.button';
-import React, { MouseEventHandler } from "react";
-import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
+import React, { MouseEventHandler } from 'react';
+import {
+    convertToWebComponent,
+    WebComponentPropTypes,
+} from '@/common/convertToWebComponent';
 
 export interface ButtonPropTypes extends WebComponentPropTypes {
     /** Button type to have different style */
-    type?: "primary" | "secondary" | "text" | "accept" | "warning" | "danger";
+    type?: 'primary' | 'secondary' | 'text' | 'accept' | 'warning' | 'danger';
     /** Size of the button */
-    size?: "macro" | "micro";
+    size?: 'macro' | 'micro';
     /** Direction of the component */
-    dir?: "rtl" | "ltr";
+    dir?: 'rtl' | 'ltr';
     /** Icon name, see the list of available icons in ts-icon component. Also note that it will hide the slot content unless the type is text */
     icon?: string;
     /** Show busy/loading animation */
@@ -26,23 +29,24 @@ export interface ButtonPropTypes extends WebComponentPropTypes {
 For instance, only use the main button once within a page or dialog. Color is also important. For
 instance, the most important button has a blue background where as a red button should only be used if
 the action it performs is potentially destructive. */
-const Button: React.FC<ButtonPropTypes> = convertToWebComponent<ButtonPropTypes>(
-    "ts-button",
-    ["type", "size", "dir", "icon"],
-    ["busy", "disabled", "grouped", "focused"],
-    ["default"],
-    ["click"],
-    {
-        click: "button-click"
-    }
-);
+const Button: React.FC<ButtonPropTypes> =
+    convertToWebComponent<ButtonPropTypes>(
+        'ts-button',
+        ['type', 'size', 'dir', 'icon'],
+        ['busy', 'disabled', 'grouped', 'focused'],
+        ['default'],
+        ['click'],
+        {
+            click: 'button-click',
+        },
+    );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 Button.defaultProps = {
-    type: "secondary",
+    type: 'secondary',
     busy: false,
-    dir: "ltr",
+    dir: 'ltr',
     disabled: false,
     grouped: false,
     focused: false,
