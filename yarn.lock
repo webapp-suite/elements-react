@@ -2499,12 +2499,12 @@
     "@webapp-suite/elements.cover" "^0.9.0"
     "@webapp-suite/elements.header" "^0.9.0"
 
-"@webapp-suite/elements.root@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.root/-/elements.root-0.9.0.tgz#5ffa5723ad2e57cd3049181ea1e0ad6ef68f87e8"
-  integrity sha512-DYLLE2oHwfS0ks11tNHHhkLBLkG35z4DRu7iiY6a0yZ9QxiuPk7vnPDEkI94p9qQFFGeHpKYGlX3oPeu5KBXdA==
+"@webapp-suite/elements.root@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.root/-/elements.root-0.10.0.tgz#37af20bda1010ba98ec5ffbd7843050c718dfed3"
+  integrity sha512-HFib6H1TJImJTNGxSnWDeKAjSAdMa1tuQXPTpu9pP5Gi7YYPbkwF9LmSXLxa2iwI5Vxe6KlfaZBLfZL8sguHTA==
   dependencies:
-    "@webapp-suite/elements" "^0.9.0"
+    "@webapp-suite/elements" "^0.10.0"
 
 "@webapp-suite/elements.spinner@^0.9.0":
   version "0.9.0"
@@ -2552,6 +2552,13 @@
   integrity sha512-T5e/WYZKv2vePQPodMx1lTa86yIwXJ6l058hUJk0JklQi422WHJH0d1+S//yHBGIY6goQZjQiS25yBtJJiyyKQ==
   dependencies:
     "@webapp-suite/elements" "^0.9.0"
+
+"@webapp-suite/elements@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements/-/elements-0.10.0.tgz#de44b7838d23e4c9554f53929ed903ec6a9cf0b5"
+  integrity sha512-aKmJL57rYMJsM3rTLlyZ9GQ6wL1adaQoSyQapBTLUNSu/ZKXDRFlzRhqCepq0haJ8/peO9dvxkJqLO5y4YE4+A==
+  dependencies:
+    lit-element "^2.4.0"
 
 "@webapp-suite/elements@^0.9.0":
   version "0.9.0"

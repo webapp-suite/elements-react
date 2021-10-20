@@ -42,7 +42,7 @@
     "@webapp-suite/elements.header": "^0.9.0",
     "@webapp-suite/elements.icon": "^0.9.0",
     "@webapp-suite/elements.modal": "^0.9.0",
-    "@webapp-suite/elements.root": "^0.9.0",
+    "@webapp-suite/elements.root": "^0.10.0",
     "@webapp-suite/elements.tab": "^0.9.0",
     "@webapp-suite/elements.tabs": "^0.9.0",
     "@webapp-suite/elements.tooltip": "^0.9.0",
