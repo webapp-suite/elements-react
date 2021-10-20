@@ -1,6 +1,6 @@
 {
   "name": "@webapp-suite/elements-react",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Progressive ui library based on web-component and react",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
