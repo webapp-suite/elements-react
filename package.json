@@ -17,7 +17,7 @@
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "release": "npm run build && npm publish --access public",
+    "release": "npm run build && npm publish --access public --registry=https://registry.npmjs.org/",
     "start": "dumi dev",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
