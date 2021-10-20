@@ -1,15 +1,15 @@
 @prefix: __dumi-default;
 
-ts-root::part(content-main) {
+ts-root::part(main) {
     margin-top: 64px;
 }
 
 .@{prefix}-layout {
-    //&[data-site-mode='true'] {
-    //    &[data-show-sidemenu='true'] {
-    //        padding-top: 50px;
-    //    }
-    //}
+    &[data-site-mode='true'] {
+        &[data-show-sidemenu='true'] {
+            padding-top: 50px;
+        }
+    }
 
     &-toc {
         padding: 0;
@@ -17,6 +17,6 @@ ts-root::part(content-main) {
     }
 
     &-hero {
-        //margin-top: -114px;
+        margin-top: -114px;
     }
 }
