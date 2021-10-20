@@ -2474,6 +2474,13 @@
     "@webapp-suite/elements" "^0.9.0"
     "@webapp-suite/elements.icon" "^0.9.0"
 
+"@webapp-suite/elements.icon@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.icon/-/elements.icon-0.10.0.tgz#b71ec659fd03414ba5fc4f3d851b75ce835c1b03"
+  integrity sha512-F7hRelXcD3UO2ejAdkohIQboPvdmu+Y7f0AlFL7W09ImV/XsojXww1GTIkrq/IrW4s+U6iobZCCXhFyVxeAG3Q==
+  dependencies:
+    "@webapp-suite/elements" "^0.10.0"
+
 "@webapp-suite/elements.icon@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@webapp-suite/elements.icon/-/elements.icon-0.9.0.tgz#302184cae3103b97b0c41723eb66d5adbc925e89"
@@ -2513,22 +2520,22 @@
   dependencies:
     "@webapp-suite/elements" "^0.9.0"
 
-"@webapp-suite/elements.tab@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.tab/-/elements.tab-0.9.0.tgz#675ef83d6316f5da422090ea96a44ed32a8fa202"
-  integrity sha512-QlljD4TdJFvsQPDOxWr0S6jbKy99PpgV2dRWFD5peMmPTxld7Rv4Glq/HIXah1RlbTp/kXsgsbJPifX61v0D4Q==
+"@webapp-suite/elements.tab@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.tab/-/elements.tab-0.10.0.tgz#ba1b6aa2c2ed4a9660a4d64fdddd62e1074acf59"
+  integrity sha512-CwwLQ3dYM5SunzKOL6hA6AXBXgO6kjxuh5QHFuJRzwoSTluhZ04rltZCtSxCCZc50vSR+nxhUXdDQkoln0JGSw==
   dependencies:
-    "@webapp-suite/elements" "^0.9.0"
+    "@webapp-suite/elements" "^0.10.0"
 
-"@webapp-suite/elements.tabs@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.tabs/-/elements.tabs-0.9.0.tgz#7290adc04f3264f4e6c2fcf60a72a308ad7b3ebe"
-  integrity sha512-hAUBR+mo6qgyf4kejz/Jrc+SBmCMdPf0yBgeCgqQssJRoO0yNgmdYfKH/xkUYJnI86yjWFtP6DJP4qCnZSHN7A==
+"@webapp-suite/elements.tabs@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.tabs/-/elements.tabs-0.10.0.tgz#c5ea8108872cf439cab0991338d2d133adcddd47"
+  integrity sha512-Lbeitq97NZxlQs35Y+0tewMcp2eRvD41kxyAQu2220FysniJbbpGfoh0X6Mg1GniT879znlejbHyh/74H1VP0g==
   dependencies:
-    "@webapp-suite/elements" "^0.9.0"
-    "@webapp-suite/elements.icon" "^0.9.0"
-    "@webapp-suite/elements.tab" "^0.9.0"
-    "@webapp-suite/elements.typography" "^0.9.0"
+    "@webapp-suite/elements" "^0.10.0"
+    "@webapp-suite/elements.icon" "^0.10.0"
+    "@webapp-suite/elements.tab" "^0.10.0"
+    "@webapp-suite/elements.typography" "^0.10.0"
 
 "@webapp-suite/elements.text-field@^0.9.0":
   version "0.9.0"
@@ -2545,6 +2552,13 @@
   integrity sha512-qUD6PwVgBbNfDp6AwHbUkw99/epRHtyw7OpIJRRCQBxOCMY+YoypbKliNtHuwbupTHiCrEwVgI9P/LNsWTdzfg==
   dependencies:
     "@webapp-suite/elements" "^0.9.0"
+
+"@webapp-suite/elements.typography@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.typography/-/elements.typography-0.10.0.tgz#f6eb6ba366a5901cbc03c3b4dcaa8f1d9d24fa89"
+  integrity sha512-S96mY5kxbxoeGJpo3PeUEdWMVml7TsxmaSymEWzPXF/rVuexUCjCe8jSgJO0XcEOqAwGId2lw8DwIvtIRPA0PQ==
+  dependencies:
+    "@webapp-suite/elements" "^0.10.0"
 
 "@webapp-suite/elements.typography@^0.9.0":
   version "0.9.0"
