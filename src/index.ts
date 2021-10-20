@@ -18,4 +18,5 @@ export { default as Modal } from './components/Modal';
 export { default as Aside } from './components/Aside';
 export { default as Dialog } from './components/Dialog';
 export { default as Space } from './components/Space';
-export { default as TextField } from './components/TextField';
+export { default as Tab } from './components/Tab';
+export { default as Tabs } from './components/Tabs';

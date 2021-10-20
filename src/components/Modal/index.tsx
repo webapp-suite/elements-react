@@ -1,9 +1,12 @@
-import "@webapp-suite/elements.modal";
-import React from "react";
-import { createPortal } from "react-dom";
-import styled from "styled-components";
-import { convertToWebComponent, WebComponentPropTypes } from "../../common/convertToWebComponent";
-import { CommonProps } from "../../interfaces/CommonProps";
+import {
+    convertToWebComponent,
+    WebComponentPropTypes,
+} from '@/common/convertToWebComponent';
+import { CommonProps } from '@/interfaces/CommonProps';
+import '@webapp-suite/elements.modal';
+import React from 'react';
+import { createPortal } from 'react-dom';
+import styled from 'styled-components';
 
 const Footer = styled.div`
     display: flex;
@@ -22,8 +25,8 @@ export interface ModalPropTypes extends WebComponentPropTypes {
     visible: boolean;
     title?: string;
     width?: string;
-    dir?: "rtl" | "ltr" | "auto";
-    size?: "small" | "medium" | "large";
+    dir?: 'rtl' | 'ltr' | 'auto';
+    size?: 'small' | 'medium' | 'large';
     noCloseOnEscKey?: boolean;
     hideHeader?: boolean;
     noPadding?: boolean;
@@ -40,50 +43,62 @@ class BodyModal extends React.Component<ModalPropTypes> {
     static defaultProps: ModalPropTypes;
     constructor(props: ModalPropTypes) {
         super(props);
-        this.container = document.createElement("div");
+        this.container = document.createElement('div');
     }
 
     componentDidUpdate(prevProps: ModalPropTypes) {
         // Open
         if (!prevProps.visible && this.props.visible) {
             document.body.appendChild(this.container);
-            document.body.setAttribute("style", "width: 100%;height: 100%;position: fixed;overflow: hidden;");
+            document.body.setAttribute(
+                'style',
+                'width: 100%;height: 100%;position: fixed;overflow: hidden;',
+            );
         }
         // Close
         if (prevProps.visible && !this.props.visible) {
             document.body.removeChild(this.container);
-            document.body.removeAttribute("style");
+            document.body.removeAttribute('style');
         }
     }
 
     componentWillUnmount() {
         if (document.body.contains(this.container)) {
             document.body.removeChild(this.container);
-            document.body.removeAttribute("style");
+            document.body.removeAttribute('style');
         }
     }
 
     render() {
-        return createPortal(<OriginalModal {...this.props}>{this.props.children}</OriginalModal>, this.container);
+        return createPortal(
+            <OriginalModal {...this.props}>
+                {this.props.children}
+            </OriginalModal>,
+            this.container,
+        );
     }
 }
 
-const OriginalModal: React.FC<ModalPropTypes> = convertToWebComponent<ModalPropTypes>(
-    "ts-modal",
-    ["title", "dir", "size", "width"],
-    ["visible", "noCloseOnEscKey", "hideHeader", "noPadding"],
-    ["note", "main", "footer"],
-    ["opened", "closed", "open", "close"],
-    {
-        title: "data-title",
-        width: "data-width",
-        dir: "data-dir",
-        size: "data-size",
-        visible: "data-visible",
-    }
-);
+const OriginalModal: React.FC<ModalPropTypes> =
+    convertToWebComponent<ModalPropTypes>(
+        'ts-modal',
+        ['title', 'dir', 'size', 'width'],
+        ['visible', 'noCloseOnEscKey', 'hideHeader', 'noPadding'],
+        ['note', 'main', 'footer'],
+        ['opened', 'closed', 'open', 'close'],
+        {
+            title: 'data-title',
+            width: 'data-width',
+            dir: 'data-dir',
+            size: 'data-size',
+            visible: 'data-visible',
+        },
+    );
 
-export type ModalStatic = Record<"ModalBody" | "ModalFooter", React.FC<CommonProps>>;
+export type ModalStatic = Record<
+    'ModalBody' | 'ModalFooter',
+    React.FC<CommonProps>
+>;
 
 const Modal: React.FC<ModalPropTypes> & ModalStatic = (props) => {
     if (props.appendOnBody) {
@@ -94,18 +109,28 @@ const Modal: React.FC<ModalPropTypes> & ModalStatic = (props) => {
 
 Modal.defaultProps = {
     visible: false,
-    title: "",
-    dir: "ltr",
-    size: "medium",
+    title: '',
+    dir: 'ltr',
+    size: 'medium',
     noCloseOnEscKey: false,
     hideHeader: false,
     noPadding: false,
     appendOnBody: false,
 };
 
-export const ModalBody: React.FC<CommonProps> = ({ children, ...restProps }) => <div slot="main" {...restProps}>{children}</div>;
+export const ModalBody: React.FC<CommonProps> = ({
+    children,
+    ...restProps
+}) => (
+    <div slot="main" {...restProps}>
+        {children}
+    </div>
+);
 
-export const ModalFooter: React.FC<CommonProps> = ({ children, ...restProps }) => (
+export const ModalFooter: React.FC<CommonProps> = ({
+    children,
+    ...restProps
+}) => (
     <div slot="footer" {...restProps}>
         <Footer>{children}</Footer>
     </div>

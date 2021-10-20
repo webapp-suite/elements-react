@@ -1,23 +1,20 @@
 {
   "name": "@webapp-suite/elements-react",
-  "description": "Progressive ui library based on web-component and react",
   "version": "0.9.3",
-  "scripts": {
-    "start": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father-build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "release": "npm run build && npm publish",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
-  },
+  "description": "Progressive ui library based on web-component and react",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "scripts": {
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "release": "npm run build && npm publish",
+    "start": "dumi dev",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -37,6 +34,8 @@
     "@webapp-suite/elements.icon": "^0.9.0",
     "@webapp-suite/elements.modal": "^0.9.0",
     "@webapp-suite/elements.root": "^0.9.0",
+    "@webapp-suite/elements.tab": "^0.9.0",
+    "@webapp-suite/elements.tabs": "^0.9.0",
     "@webapp-suite/elements.tooltip": "^0.9.0",
     "classnames": "^2.2.6",
     "react": "^16.12.0",
@@ -44,6 +43,7 @@
     "webcomponents-in-react": "^1.0.1"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.15",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.1.24",
     "father-build": "^1.17.2",
@@ -51,5 +51,8 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   }
 }

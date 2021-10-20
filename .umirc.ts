@@ -10,5 +10,8 @@ export default defineConfig({
         'https://unpkg.com/@webapp-suite/elements/src/fonts.css',
     ],
     mode: 'site',
+    dynamicImport: {
+        loading: '@/Loading',
+    },
     // more config: https://d.umijs.org/config
 });
