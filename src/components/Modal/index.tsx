@@ -1,12 +1,12 @@
-import {
-    convertToWebComponent,
-    WebComponentPropTypes,
-} from '@/common/convertToWebComponent';
-import { CommonProps } from '@/interfaces/CommonProps';
 import '@webapp-suite/elements.modal';
 import React from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
+import {
+    convertToWebComponent,
+    WebComponentPropTypes,
+} from '../../common/convertToWebComponent';
+import { CommonProps } from '../../interfaces/CommonProps';
 
 const Footer = styled.div`
     display: flex;

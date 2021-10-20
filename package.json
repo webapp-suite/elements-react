@@ -5,16 +5,25 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "src/fonts.css",
+    "src/vars.css"
+  ],
   "scripts": {
     "build": "father-build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
+    "deploy": "DEPLOY_ENV=GITHUB npm run docs:build && npm run docs:deploy",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "release": "npm run build && npm publish",
+    "release": "npm run build && npm publish --access public",
     "start": "dumi dev",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -38,11 +47,12 @@
     "@webapp-suite/elements.tabs": "^0.9.0",
     "@webapp-suite/elements.tooltip": "^0.9.0",
     "classnames": "^2.2.6",
-    "react": "^16.12.0",
     "styled-components": "^5.3.0",
     "webcomponents-in-react": "^1.0.1"
   },
   "devDependencies": {
+    "@types/react": "^16.14.0",
+    "@types/react-dom": "^16.9.14",
     "@types/styled-components": "^5.1.15",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.1.24",
@@ -51,6 +61,10 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "yorkie": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

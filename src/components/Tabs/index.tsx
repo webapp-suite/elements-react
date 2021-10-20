@@ -1,9 +1,9 @@
+import '@webapp-suite/elements.tabs';
+import React, { MouseEventHandler } from 'react';
 import {
     convertToWebComponent,
     WebComponentPropTypes,
-} from '@/common/convertToWebComponent';
-import '@webapp-suite/elements.tabs';
-import React, { MouseEventHandler } from 'react';
+} from '../../common/convertToWebComponent';
 
 export interface TabsProps extends WebComponentPropTypes {
     /** Direction `rtl`, `ltr` */

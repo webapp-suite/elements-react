@@ -3,7 +3,7 @@ import React, { MouseEventHandler } from 'react';
 import {
     convertToWebComponent,
     WebComponentPropTypes,
-} from '@/common/convertToWebComponent';
+} from '../../common/convertToWebComponent';
 
 export interface ButtonPropTypes extends WebComponentPropTypes {
     /** Button type to have different style */
