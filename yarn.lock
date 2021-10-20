@@ -2420,6 +2420,14 @@
   dependencies:
     "@webapp-suite/elements" "^0.9.0"
 
+"@webapp-suite/elements.button@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@webapp-suite/elements.button/-/elements.button-0.10.0.tgz#941579256661265a7c8cab8d625662647082eb8a"
+  integrity sha512-nwbMb2bsvMrKOUpri/GZqmxsVy+5BIp42tp9NL8RtDzMEIJK7aNKi4mI6TKg9exYsuJIxWPGSDHbpTv2gRhjrw==
+  dependencies:
+    "@webapp-suite/elements" "^0.10.0"
+    "@webapp-suite/elements.icon" "^0.10.0"
+
 "@webapp-suite/elements.button@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@webapp-suite/elements.button/-/elements.button-0.9.0.tgz#df2ffdfc33283c11a58aff2d13ba3c621852da71"

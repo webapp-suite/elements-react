@@ -36,7 +36,7 @@
   "dependencies": {
     "@webapp-suite/elements": "^0.9.0",
     "@webapp-suite/elements.aside": "^0.9.0",
-    "@webapp-suite/elements.button": "^0.9.0",
+    "@webapp-suite/elements.button": "^0.10.0",
     "@webapp-suite/elements.confirmation-prompt": "^0.9.0",
     "@webapp-suite/elements.dialog": "^0.9.0",
     "@webapp-suite/elements.header": "^0.9.0",
