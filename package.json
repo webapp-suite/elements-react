@@ -2,6 +2,13 @@
   "name": "@webapp-suite/elements-react",
   "version": "0.11.0",
   "description": "Progressive ui library based on web-component and react",
+  "bugs": {
+    "url": "https://github.com/webapp-suite/elements-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webapp-suite/elements-react.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
