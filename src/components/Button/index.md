@@ -1,5 +1,9 @@
 # Button
 
+```js
+import { Button } from '@webapp-suite/elements-react';
+```
+
 ## Default
 
 ```tsx

@@ -21,7 +21,7 @@ yarn version:minor # major, minor, patch
 yarn release
 ```
 
-## Deploy docs to Github
+## Deploy docs to github
 
 ```bash
 yarn deploy

@@ -1,5 +1,9 @@
 # Header
 
+```js
+import { Header } from '@webapp-suite/elements-react';
+```
+
 ## Basic
 
 ```tsx

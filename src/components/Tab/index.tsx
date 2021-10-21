@@ -6,10 +6,10 @@ import {
 } from '../../common/convertToWebComponent';
 
 export interface TabProps extends WebComponentPropTypes {
-    /** Direction `rtl`, `ltr` */
-    dir?: 'rtl' | 'ltr' | 'auto';
     /** The label text for the tab */
     label: string;
+    /** Direction `rtl`, `ltr` */
+    dir?: 'rtl' | 'ltr' | 'auto';
     /** Make the tab selected */
     selected?: boolean;
     /** Icon name from the available icons in the icon component */

@@ -1,5 +1,10 @@
 # Modal
 
+```js
+import { Modal } from '@webapp-suite/elements-react';
+const { ModalBody, ModalFooter } = Modal;
+```
+
 ## Default
 
 ```tsx

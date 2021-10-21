@@ -1,5 +1,9 @@
 # Aside
 
+```js
+import { Aside } from '@webapp-suite/elements-react';
+```
+
 ## Default
 
 ```tsx

@@ -1,5 +1,9 @@
 # Dialog
 
+```js
+import { Dialog } from '@webapp-suite/elements-react';
+```
+
 ## Basic
 
 ```tsx
