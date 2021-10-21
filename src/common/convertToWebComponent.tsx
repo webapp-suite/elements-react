@@ -46,7 +46,7 @@ export const convertToWebComponent = <T extends Record<string, any>>(
     const WithWebComponent = forwardRef(
         // @ts-ignore
         (props: T & WebComponentPropTypes, wcRef: RefObject<DomRef>) => {
-            const { className, tooltip, children, ...rest } = props;
+            const { className, children, ...rest } = props;
 
             const ref = useConsolidatedRef<HTMLElement>(wcRef);
             const eventRegistry = useRef<Record<string, EventHandler>>({});
@@ -178,7 +178,6 @@ export const convertToWebComponent = <T extends Record<string, any>>(
                     {...regularProps}
                     {...nonWebComponentRelatedProps}
                     class={className}
-                    // title={tooltip}
                 >
                     {slots}
                     {children}

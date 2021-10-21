@@ -1,4 +1,4 @@
-import { CSSProperties, Ref, HTMLAttributes } from 'react';
+import { CSSProperties, Ref } from 'react';
 
 export interface CommonProps {
     /**
@@ -11,9 +11,5 @@ export interface CommonProps {
      * Use this prop carefully, overwriting CSS rules might break the component.
      */
     className?: string;
-    /**
-     * A tooltip which will be shown on hover
-     */
-    tooltip?: string;
     ref?: Ref<any>;
 }
