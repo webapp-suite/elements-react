@@ -4,7 +4,7 @@
 import { Tabs, Tab } from '@webapp-suite/elements-react';
 ```
 
-## Basic
+## Standard
 
 ```tsx
 /**
@@ -38,6 +38,8 @@ export default () => (
     </Tabs>
 );
 ```
+
+## Customization
 
 ## API
 
