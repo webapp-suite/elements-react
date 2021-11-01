@@ -9,10 +9,10 @@ export default defineConfig({
     favicon: `${PUBLIC_PREFIX}images/favicon.png`,
     logo: `${PUBLIC_PREFIX}images/logo.png`,
     outputPath: 'docs-dist',
-    styles: [
-        `https://unpkg.com/${pkg.name}/src/vars.css`,
-        `https://unpkg.com/${pkg.name}/src/fonts.css`,
-    ],
+    // styles: [
+    //     `https://unpkg.com/${pkg.name}/src/vars.css`,
+    //     `https://unpkg.com/${pkg.name}/src/fonts.css`,
+    // ],
     mode: 'site',
     dynamicImport: {
         loading: '@/Loading',

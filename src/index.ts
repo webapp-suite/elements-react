@@ -1,3 +1,6 @@
+import '@webapp-suite/elements/src/fonts.css';
+import '@webapp-suite/elements/src/vars.css';
+
 declare global {
     namespace JSX {
         interface IntrinsicElements {

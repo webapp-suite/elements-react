@@ -14,9 +14,7 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "LICENSE",
-    "src/fonts.css",
-    "src/vars.css"
+    "LICENSE"
   ],
   "scripts": {
     "build": "father-build",

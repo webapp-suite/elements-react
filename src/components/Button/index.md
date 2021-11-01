@@ -66,12 +66,17 @@ Determine if the button is disabled. `onClick` event won't be dispatched.
 
 ```tsx
 import React from 'react';
-import { Button } from '@webapp-suite/elements-react';
+import { Button, Space } from '@webapp-suite/elements-react';
 
 export default () => (
-    <Button disabled onClick={() => alert('Clicked!')}>
-        Disabled
-    </Button>
+    <Space>
+        <Button disabled onClick={() => alert('Clicked!')}>
+            Disabled
+        </Button>
+        <Button disabled onClick={() => alert('Clicked!')} type="primary">
+            Primary
+        </Button>
+    </Space>
 );
 ```
 
